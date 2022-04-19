@@ -1,0 +1,40 @@
+.header {
+    grid-column: center-start / center-end;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+
+    &__logo {
+        display: inline-block;
+        height: 3.7rem;
+        width: 100%;
+        object-fit: contain;
+
+        &-box {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-column-gap: 2rem;
+            align-content: center;
+        }
+
+        &-pro {
+            margin-top: -2px;
+        }
+    }
+
+
+    &__location {
+        justify-self: center;
+        align-self: center;
+
+        &__icon-location {
+            
+        }
+    }
+
+    &__nav {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min-content, 1rem));
+    }
+}
