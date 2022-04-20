@@ -1,9 +1,17 @@
 .cta {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-    align-items: center;
+    grid-template-columns: min-content min-content;
+    grid-row-gap: 2rem;
+    justify-content: space-evenly;
 
     &__phone {
         font-size: 1.6rem;
     }   
+
+    &-box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        align-items: center;
+        justify-items: center;
+    }
 }
