@@ -1,17 +1,20 @@
 .cta {
-    display: grid;
-    grid-template-columns: min-content min-content;
-    grid-row-gap: 2rem;
-    justify-content: space-evenly;
 
     &__phone {
+        display: inline-block;
         font-size: 1.6rem;
     }   
 
+    &__btn {
+        display: inline-block;
+        width: 12rem;
+    }
+
     &-box {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 14rem));
+        grid-column-gap: 2rem;
         align-items: center;
-        justify-items: center;
+        justify-content: center;
     }
 }
