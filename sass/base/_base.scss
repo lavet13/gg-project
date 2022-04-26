@@ -13,4 +13,8 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 1rem = 10px; (10px / 16px) * 100 = 62.5%
+
+    @include respond(bp-large) { // 1100px
+        font-size: 50%; // 0.5 * 16 = 8px
+    }
 }

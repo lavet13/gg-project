@@ -2,6 +2,7 @@
     grid-column: center-start / center-end;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min-content, max-content));
-    
+    grid-template-columns: repeat(3, minmax(min-content, max-content)) 1fr minmax(min-content, max-content);
+    align-items: start;
+    justify-items: start;
 }

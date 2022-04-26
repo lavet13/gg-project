@@ -1,3 +1,21 @@
+/*
+0 - 600px:     Phone
+600 - 900px:   Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :   Big desktop
+
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1 em = 16px
+*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 * {
   margin: 0;
@@ -13,6 +31,11 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+}
+@media only screen and (max-width: 68.75em) {
+  html {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -49,16 +72,38 @@ body {
   display: inline-block;
   font-size: 1.6rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .cta__phone {
+    justify-self: end;
+  }
+}
 .cta__btn {
   display: inline-block;
   width: 12rem;
 }
+@media only screen and (max-width: 56.25em) {
+  .cta__btn {
+    justify-self: start;
+  }
+}
 .cta-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 14rem));
+  grid-template-columns: repeat(auto-fit, minmax(12.2rem, 1fr));
   grid-column-gap: 2rem;
   align-items: center;
+  justify-items: center;
   justify-content: center;
+}
+@media only screen and (max-width: 68.75em) {
+  .cta-box {
+    justify-content: end;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .cta-box {
+    grid-column: 1/-1;
+    justify-content: center;
+  }
 }
 
 .container {
@@ -78,7 +123,24 @@ body {
 .header {
   grid-column: center-start/center-end;
   display: grid;
-  grid-template-columns: minmax(min-content, max-content) 11rem 9fr 17fr;
+  grid-template-columns: minmax(min-content, max-content) 5fr 8fr 15fr;
+  grid-row-gap: 2rem;
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 68.75em) {
+  .header {
+    grid-template-columns: minmax(min-content, max-content) 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .header {
+    grid-template-columns: minmax(min-content, max-content) 1fr;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .header {
+    grid-template-columns: 1fr;
+  }
 }
 .header__logo {
   max-width: 100%;
@@ -91,6 +153,11 @@ body {
   align-items: center;
   justify-items: start;
 }
+@media only screen and (max-width: 37.5em) {
+  .header__logo-box {
+    justify-content: center;
+  }
+}
 .header__location {
   justify-self: center;
   align-self: center;
@@ -102,11 +169,25 @@ body {
   align-items: center;
   justify-content: end;
 }
+@media only screen and (max-width: 68.75em) {
+  .header__nav {
+    justify-content: center;
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (max-width: 31.25em) {
+  .header__nav {
+    justify-items: center;
+    grid-template-columns: auto;
+  }
+}
 
 .nav {
   grid-column: center-start/center-end;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, max-content));
+  grid-template-columns: repeat(3, minmax(min-content, max-content)) 1fr minmax(min-content, max-content);
+  align-items: start;
+  justify-items: start;
 }
 
 .slider {
