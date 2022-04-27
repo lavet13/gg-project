@@ -47,8 +47,25 @@ body {
 
 .btn, .btn:visited, .btn:link {
   display: inline-block;
-  border: 0;
   cursor: pointer;
+  color: #fff;
+  font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0;
+  padding: 2rem 2.5rem;
+}
+.btn--dark {
+  background-color: #004C93;
+}
+.btn--light {
+  background-color: #1061AB;
+}
+.btn--lighten {
+  background-color: #2B7BC6;
 }
 
 .btn-inline {
@@ -104,6 +121,17 @@ body {
     grid-column: 1/-1;
     justify-content: center;
   }
+}
+
+.search__input {
+  display: block;
+  border: 0;
+  background-color: #f2f2f2;
+  height: 100%;
+  width: 100%;
+}
+.search__input:focus {
+  outline: none;
 }
 
 .container {
@@ -186,7 +214,7 @@ body {
   grid-column: center-start/center-end;
   display: grid;
   grid-template-columns: repeat(3, minmax(min-content, max-content)) 1fr minmax(min-content, max-content);
-  align-items: start;
+  align-items: stretch;
   justify-items: start;
 }
 

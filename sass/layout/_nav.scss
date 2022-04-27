@@ -3,6 +3,6 @@
 
     display: grid;
     grid-template-columns: repeat(3, minmax(min-content, max-content)) 1fr minmax(min-content, max-content);
-    align-items: start;
+    align-items: stretch;
     justify-items: start;
 }
