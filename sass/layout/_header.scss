@@ -2,9 +2,9 @@
     grid-column: center-start / center-end;
 
     display: grid;
-    grid-template-columns: minmax(min-content, max-content) 5fr 8fr 15fr;
+    grid-template-columns: minmax(min-content, max-content) 5fr 11fr 15fr;
     grid-row-gap: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 
     @include respond(bp-large) {
         grid-template-columns: minmax(min-content, max-content) 1fr 1fr;
@@ -42,9 +42,14 @@
         justify-self: center;
         align-self: center;
 
-        &__icon-location {
-            
-        }
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon-location {
+        width: 10px;
+        height: 13px;
+        margin-right: .3rem;
     }
 
     &__nav {

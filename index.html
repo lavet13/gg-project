@@ -15,14 +15,22 @@
         </div>
 
         <div class="header__location">
-            <!-- <img class="header__icon-location" src="img/location.png" alt="Location"> -->
+            <svg class="header__icon-location">
+                <use xlink:href="img/frame.svg#frame"></use>
+            </svg>
             <a class="btn-inline btn-inline--dashed" href="#">Москва</a>
         </div>
 
         <div class="cta-box">
             <div class="cta__phone">
-                8 495 018-32-10
+                8 495 018-32-10 
+
+                <svg class="cta__icon">
+                    <use xlink:href="img/dropdown.svg#dropdown"></use>
+                </svg>
             </div>
+
+            
 
             <a class="btn-inline btn-inline--dashed cta__btn" href="#">Заказать звонок</a>
         </div>
@@ -37,7 +45,11 @@
     </header>
 
     <nav class="nav">
-        <button class="btn btn--dark">Каталог товаров</button>
+        <button class="btn btn--dark">
+            <svg>
+                <use xlink:href="img/burger.svg#burger"></use>
+            </svg>
+            Каталог товаров</button>
         <a class="btn btn--light" href="#">Акции</a>
         <a class="btn btn--lighten" href="#">Бренды</a>
         <form class="search" action="#">
