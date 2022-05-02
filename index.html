@@ -16,7 +16,7 @@
 
         <div class="header__location">
             <svg class="header__icon-location">
-                <use xlink:href="img/frame.svg#frame"></use>
+                <use xlink:href="img/location.svg#location"></use>
             </svg>
             <a class="btn-inline btn-inline--dashed" href="#">Москва</a>
         </div>
@@ -46,38 +46,45 @@
 
     <nav class="nav">
         <button class="btn btn--dark">
-            <svg>
-                <use xlink:href="img/burger.svg#burger"></use>
-            </svg>
-            Каталог товаров</button>
+            <div class="btn__align">
+                <svg class="btn__icon">
+                    <use xlink:href="img/burger.svg#burger"></use>
+                </svg>
+                Каталог товаров <!-- codepen get the burget work along with animation-->
+            </div>
+        </button>
         <a class="btn btn--light" href="#">Акции</a>
         <a class="btn btn--lighten" href="#">Бренды</a>
         <form class="search" action="#">
             <input class="search__input" type="text" placeholder="Что вы ищете?">
-            <!-- <button class="search__button">
+            <button class="search__button">
                 <svg class="search__icon">
-                    <use xlink:href="img/"></use>
+                    <use xlink:href="img/search-icon.svg#search"></use>
                 </svg>
-            </button> -->
+            </button>
         </form>
         
         <nav class="user-nav">
             <div class="user-nav__icon-box">
-                <!-- <svg class="user-nav__icon">
-                    <use xlink:href=""></use>
-                </svg> -->
+                <svg class="user-nav__icon--user">
+                    <use xlink:href="img/user-icon.svg#user"></use>
+                </svg>
             </div>
             <div class="user-nav__icon-box">
-                <!-- <svg class="user-nav__icon">
-                    <use xlink:href=""></use>
+                <svg class="user-nav__icon--heart">
+                    <use xlink:href="img/fav-heart.svg#heart"></use>
                 </svg>
-                <span class="user-nav__notification"></span> -->
+                <span class="user-nav__notification-box">
+                    <span class="user-nav__notification">4</span>
+                </span>
             </div>
             <div class="user-nav__icon-box">
-                <!-- <svg class="user-nav__icon">
-                    <use xlink:href=""></use>
+                <svg class="user-nav__icon--market">
+                    <use xlink:href="img/market.svg#market"></use>
                 </svg>
-                <span class="user-nav__notification"></span> -->
+                <span class="user-nav__notification-box">
+                    <span class="user-nav__notification">2</span>
+                </span>
             </div>
         </nav>
     </nav>

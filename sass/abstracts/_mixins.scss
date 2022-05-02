@@ -50,13 +50,13 @@ ORDER: Base + typography > general layout + grid > page layout > components
     }
 
     @if $breakpoint == bp-medium {
-        @media only screen and (max-width: 56.25em) {    // 900px
+        @media only screen and (max-width: 43.75em) {    // 700px
             @content;
         }
     }
 
-    @if $breakpoint == bp-small {                       // 600px
-        @media only screen and (max-width: 37.5em) {
+    @if $breakpoint == bp-small {                       // 500px
+        @media only screen and (max-width: 31.25em) {
             @content;
         }
     }

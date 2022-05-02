@@ -23,6 +23,8 @@
         max-height: 3.7rem;
 
         &-box {
+            cursor: pointer;
+            
             display: grid;
             grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
             grid-column-gap: 5px;
@@ -49,7 +51,7 @@
     &__icon-location {
         width: 10px;
         height: 13px;
-        margin-right: .3rem;
+        margin-right: 1rem;
     }
 
     &__nav {

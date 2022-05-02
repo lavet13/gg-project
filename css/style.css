@@ -52,7 +52,7 @@ body {
   font-size: 1.4rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
   border: 0;
@@ -66,6 +66,15 @@ body {
 }
 .btn--lighten {
   background-color: #2B7BC6;
+}
+.btn__icon {
+  width: 24px;
+  height: 18px;
+}
+.btn__align {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 2rem;
 }
 
 .btn-inline {
@@ -96,7 +105,7 @@ body {
   align-items: center;
   font-size: 1.6rem;
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 43.75em) {
   .cta__phone {
     justify-self: end;
   }
@@ -105,7 +114,7 @@ body {
   display: inline-block;
   width: 12rem;
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 43.75em) {
   .cta__btn {
     justify-self: start;
   }
@@ -123,22 +132,104 @@ body {
     justify-content: end;
   }
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 43.75em) {
   .cta-box {
     grid-column: 1/-1;
     justify-content: center;
   }
 }
 
+.search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 .search__input {
+  align-self: stretch;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
   display: block;
-  border: 0;
   background-color: #f2f2f2;
-  height: 100%;
+  padding: 2rem 2.4rem;
+  margin-right: -3.25rem;
+  border: none;
   width: 100%;
 }
 .search__input:focus {
   outline: none;
+  background-color: #f0eeee;
+}
+.search__input::-webkit-input-placeholder {
+  color: #536067;
+}
+.search__input:focus ~ .search__button {
+  background-color: #f0eeee;
+}
+.search__button {
+  cursor: pointer;
+  border: none;
+  background-color: #f2f2f2;
+  transition: all 0.2s;
+}
+.search__button:focus {
+  outline: none;
+}
+.search__button:active {
+  transform: translateY(2px);
+}
+.search__icon {
+  width: 22px;
+  height: 23px;
+}
+
+.user-nav {
+  background-color: #F1F8FF;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+}
+.user-nav__icon--user {
+  width: 26px;
+  height: 29px;
+}
+.user-nav__icon--heart {
+  width: 32px;
+  height: 29px;
+}
+.user-nav__icon--market {
+  width: 35px;
+  height: 29px;
+}
+.user-nav__icon-box {
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.user-nav__icon-box:active {
+  transform: translateY(2px);
+}
+.user-nav__icon-box:not(:last-child) {
+  margin-right: 1.5rem;
+}
+.user-nav__notification-box {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.user-nav__notification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #004C93;
+  font-weight: 600;
+  border-radius: 100px;
+  background-color: #FFD600;
 }
 
 .container {
@@ -167,12 +258,12 @@ body {
     grid-template-columns: minmax(min-content, max-content) 1fr 1fr;
   }
 }
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 43.75em) {
   .header {
     grid-template-columns: minmax(min-content, max-content) 1fr;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 31.25em) {
   .header {
     grid-template-columns: 1fr;
   }
@@ -182,13 +273,14 @@ body {
   max-height: 3.7rem;
 }
 .header__logo-box {
+  cursor: pointer;
   display: grid;
   grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
   grid-column-gap: 5px;
   align-items: center;
   justify-items: start;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 31.25em) {
   .header__logo-box {
     justify-content: center;
   }
@@ -202,7 +294,7 @@ body {
 .header__icon-location {
   width: 10px;
   height: 13px;
-  margin-right: 0.3rem;
+  margin-right: 1rem;
 }
 .header__nav {
   display: grid;
@@ -227,7 +319,7 @@ body {
 .nav {
   grid-column: center-start/center-end;
   display: grid;
-  grid-template-columns: repeat(3, minmax(min-content, max-content)) 1fr minmax(min-content, max-content);
+  grid-template-columns: repeat(3, auto) 1fr auto;
   align-items: stretch;
   justify-items: start;
 }
