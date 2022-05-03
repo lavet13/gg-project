@@ -45,7 +45,7 @@
     </header>
 
     <nav class="nav">
-        <button class="btn btn--dark">
+        <button class="btn btn--dark nav__button--1">
             <div class="btn__align">
                 <svg class="btn__icon">
                     <use xlink:href="img/burger.svg#burger"></use>
@@ -53,9 +53,9 @@
                 Каталог товаров <!-- codepen get the burget work along with animation-->
             </div>
         </button>
-        <a class="btn btn--light" href="#">Акции</a>
-        <a class="btn btn--lighten" href="#">Бренды</a>
-        <form class="search" action="#">
+        <a class="btn btn--light nav__button--2" href="#">Акции</a>
+        <a class="btn btn--lighten nav__button--3" href="#">Бренды</a>
+        <form class="search nav__search" action="#">
             <input class="search__input" type="text" placeholder="Что вы ищете?">
             <button class="search__button">
                 <svg class="search__icon">
@@ -64,7 +64,7 @@
             </button>
         </form>
         
-        <nav class="user-nav">
+        <nav class="user-nav nav__navigation">
             <div class="user-nav__icon-box">
                 <svg class="user-nav__icon--user">
                     <use xlink:href="img/user-icon.svg#user"></use>
@@ -89,9 +89,37 @@
         </nav>
     </nav>
 
-    <div class="slider">
+    <ul class="slider">
+        <li>
+            <h1 class="heading-primary">СМЕСИТЕЛИ RAIBER</h1>
+            <h2 class="heading-secondary">уже в наличии</h2>
+            <button class="btn btn--yellow">ПОДРОБНЕЕ</button>
+        </li>
 
-    </div>
+        <li>
+            <h1 class="heading-primary">СМЕСИТЕЛИ RAIBER</h1>
+            <h2 class="heading-secondary">уже в наличии</h2>
+            <button class="btn btn--yellow">ПОДРОБНЕЕ</button>
+        </li>
+
+        <li>
+            <h1 class="heading-primary">СМЕСИТЕЛИ RAIBER</h1>
+            <h2 class="heading-secondary">уже в наличии</h2>
+            <button class="btn btn--yellow">ПОДРОБНЕЕ</button>
+        </li>
+
+        <li>
+            <h1 class="heading-primary">СМЕСИТЕЛИ RAIBER</h1>
+            <h2 class="heading-secondary">уже в наличии</h2>
+            <button class="btn btn--yellow">ПОДРОБНЕЕ</button>
+        </li>
+
+        <li>
+            <h1 class="heading-primary">СМЕСИТЕЛИ RAIBER</h1>
+            <h2 class="heading-secondary">уже в наличии</h2>
+            <button class="btn btn--yellow">ПОДРОБНЕЕ</button>
+        </li>
+    </ul>
 
     <div class="discount">
         <div class="discount__box">
@@ -129,5 +157,6 @@
         </div>
     </section>
 
+    <script src="dist/bundle.js"></script>
 </body>
 </html>

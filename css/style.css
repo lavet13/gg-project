@@ -1,3 +1,4 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css");
 /*
 0 - 600px:     Phone
 600 - 900px:   Tablet portrait
@@ -45,8 +46,17 @@ body {
   color: #000;
 }
 
+.heading-primary {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
 .btn, .btn:visited, .btn:link {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   cursor: pointer;
   color: #fff;
   font-size: 1.4rem;
@@ -67,13 +77,25 @@ body {
 .btn--lighten {
   background-color: #2B7BC6;
 }
+.btn--yellow {
+  color: #000;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: #FFD600;
+  transition: all 0.2s;
+}
+.btn--yellow:hover {
+  background-color: #ffde33;
+}
 .btn__icon {
   width: 24px;
   height: 18px;
 }
 .btn__align {
   display: grid;
-  grid-template-columns: auto auto;
+  justify-items: start;
+  align-items: center;
+  grid-template-columns: min-content auto;
   grid-column-gap: 2rem;
 }
 
@@ -265,6 +287,7 @@ body {
 }
 @media only screen and (max-width: 31.25em) {
   .header {
+    grid-column: full-start/full-end;
     grid-template-columns: 1fr;
   }
 }
@@ -322,6 +345,67 @@ body {
   grid-template-columns: repeat(3, auto) 1fr auto;
   align-items: stretch;
   justify-items: start;
+}
+@media only screen and (max-width: 68.75em) {
+  .nav {
+    grid-template-columns: 2fr 1fr 1fr auto;
+  }
+}
+@media only screen and (max-width: 43.75em) {
+  .nav {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 31.25em) {
+  .nav {
+    grid-column: full-start/full-end;
+    grid-template-columns: 1fr 1fr min-content;
+  }
+}
+.nav__button--1 {
+  width: 100%;
+}
+.nav__button--2 {
+  width: 100%;
+}
+.nav__button--3 {
+  width: 100%;
+}
+@media only screen and (max-width: 31.25em) {
+  .nav__button--3 {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 68.75em) {
+  .nav__search {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (max-width: 43.75em) {
+  .nav__search {
+    grid-column: 1/3;
+  }
+}
+@media only screen and (max-width: 68.75em) {
+  .nav__navigation {
+    grid-column: 4/-1;
+    grid-row: 1/2;
+    margin-left: auto;
+  }
+}
+@media only screen and (max-width: 43.75em) {
+  .nav__navigation {
+    grid-column: 3/-1;
+    grid-row: 2/3;
+    width: 100%;
+    justify-content: end;
+  }
+}
+@media only screen and (max-width: 31.25em) {
+  .nav__navigation .user-nav__icon-box {
+    transform: scale(0.8);
+    margin: 0;
+  }
 }
 
 .slider {

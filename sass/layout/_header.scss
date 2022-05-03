@@ -15,6 +15,7 @@
     }
 
     @include respond(bp-small) {
+        grid-column: full-start / full-end;
         grid-template-columns: 1fr;
     }
 

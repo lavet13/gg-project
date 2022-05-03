@@ -2,7 +2,9 @@
     &,
     &:visited,
     &:link {
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
         cursor: pointer;
         color: $color-white;
         font-size: 1.4rem;
@@ -28,6 +30,19 @@
         background-color: $color-blue-light-1;
     }
 
+    &--yellow {
+        color: $color-black;
+        font-weight: 500;
+        border-radius: 5px;
+        background-color: $color-yellow;
+
+        transition: all .2s;
+        
+        &:hover {
+            background-color: lighten($color-yellow, 10%);
+        }
+    }
+
     &__icon {
         width: 24px;
         height: 18px;
@@ -35,7 +50,9 @@
 
     &__align {
         display: grid;
-        grid-template-columns: auto auto;
+        justify-items: start;
+        align-items: center;
+        grid-template-columns: min-content auto;
         grid-column-gap: 2rem;
     }
 }
