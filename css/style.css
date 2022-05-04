@@ -53,6 +53,18 @@ body {
   line-height: 1;
 }
 
+.mb-sm {
+  margin-bottom: 1.5rem !important;
+}
+
+.mb-md {
+  margin-bottom: 4rem !important;
+}
+
+.mb-bg {
+  margin-bottom: 8rem !important;
+}
+
 .btn, .btn:visited, .btn:link {
   display: flex;
   align-items: center;
@@ -261,7 +273,7 @@ body {
 }
 
 .discount {
-  grid-column: center-start/center-end;
+  grid-column: col-start 5/center-end;
 }
 
 .features {
@@ -345,6 +357,7 @@ body {
   grid-template-columns: repeat(3, auto) 1fr auto;
   align-items: stretch;
   justify-items: start;
+  margin-bottom: 2rem;
 }
 @media only screen and (max-width: 68.75em) {
   .nav {
@@ -408,8 +421,63 @@ body {
   }
 }
 
-.slider {
-  grid-column: center-start/center-end;
+.tns-outer {
+  position: relative;
+  background-color: #004C93;
+  color: #fff;
+  grid-column: col-start 1/col-end 4;
+  height: 20rem;
+}
+.tns-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 15;
+}
+.tns-nav {
+  position: absolute;
+  right: 0;
+  bottom: 2rem;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+.tns-nav button {
+  display: inline-block;
+  border-radius: 100px;
+  border: 0;
+  width: 10px;
+  height: 10px;
+}
+.tns-nav button:not(:last-child) {
+  margin-right: 2rem;
+}
+
+[data-controls=prev] {
+  border: 0;
+}
+
+[data-controls=next] {
+  border: 0;
+}
+
+[data-action=start] {
+  display: none;
+}
+
+[data-action=stop] {
+  display: none;
+}
+
+.slider__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
