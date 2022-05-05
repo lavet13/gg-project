@@ -457,12 +457,7 @@ body {
 .tns-nav button:not(:last-child) {
   margin-right: 2rem;
 }
-
-[data-controls=prev] {
-  border: 0;
-}
-
-[data-controls=next] {
+.tns__arrow {
   border: 0;
 }
 

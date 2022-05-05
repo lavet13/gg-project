@@ -39,15 +39,16 @@
             }
         }
     }
+
+    &__arrow{
+        border: 0;
+        
+    }
 }
 
-[data-controls="prev"] {
-    border: 0;
-}
 
-[data-controls="next"] {
-    border: 0;
-}
+
+
 
 
 [data-action="start"] {

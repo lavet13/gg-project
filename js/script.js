@@ -1,12 +1,7 @@
-import { tns } from "../node_modules/tiny-slider/src/tiny-slider";
+import slider from './modules/slider';
 
 window.addEventListener("DOMContentLoaded", () => {
 
-    tns({
-        container: '.slider',
-        items: 1,
-        slideBy: 'page',
-        autoplay: true
-    });
+    slider();
 
 });

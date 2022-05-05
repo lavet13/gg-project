@@ -2,6 +2,41 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./js/modules/slider.js":
+/*!******************************!*\
+  !*** ./js/modules/slider.js ***!
+  \******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ slider; }
+/* harmony export */ });
+/* harmony import */ var _node_modules_tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/tiny-slider/src/tiny-slider */ "./node_modules/tiny-slider/src/tiny-slider.js");
+
+function slider() {
+  (0,_node_modules_tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__.tns)({
+    container: '.slider',
+    items: 1,
+    slideBy: 'page',
+    autoplay: true
+  });
+  const prev = document.querySelector('[data-controls="prev"]'),
+        next = document.querySelector('[data-controls="next"]');
+  prev.innerHTML = "&#8882;";
+  next.innerHTML = "&#8883;";
+  prev.classList.add('tns__arrow');
+  next.classList.add('tns__arrow'); // const cloneArrows = next.parentElement.cloneNode(true); // You call the cloneNode() method on the element you want to copy. If you want to also copy elements nested inside it, pass in true as an argument.
+  // next.parentElement.after(cloneArrows);
+  // https://gomakethings.com/how-to-copy-or-clone-an-element-with-vanilla-js/#:~:text=You%20call%20the%20cloneNode(),of%20it%20var%20clone%20%3D%20elem.
+  // prev.parentElement.insertAdjacentElement('beforebegin', prev);
+  // next.parentElement.insertAdjacentElement('beforebegin', next);
+  // previousElementSibling
+  // nextElementSibling
+}
+
+/***/ }),
+
 /***/ "./node_modules/tiny-slider/src/helpers/addCSSRule.js":
 /*!************************************************************!*\
   !*** ./node_modules/tiny-slider/src/helpers/addCSSRule.js ***!
@@ -3914,15 +3949,10 @@ var __webpack_exports__ = {};
   !*** ./js/script.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/tiny-slider/src/tiny-slider */ "./node_modules/tiny-slider/src/tiny-slider.js");
+/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ "./js/modules/slider.js");
 
 window.addEventListener("DOMContentLoaded", () => {
-  (0,_node_modules_tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__.tns)({
-    container: '.slider',
-    items: 1,
-    slideBy: 'page',
-    autoplay: true
-  });
+  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
 });
 }();
 /******/ })()
