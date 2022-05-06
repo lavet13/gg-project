@@ -7,9 +7,27 @@ body {
     color: $color-black;
 }
 
-.heading-primary {
-    font-size: 3rem;
-    font-weight: 600;
-    letter-spacing: 2px;
+.spacing-text {
+    color: $color-white;
+    letter-spacing: 3px;
     line-height: 1;
+
+    &--big {
+        font-size: 3rem;
+        font-weight: 600;
+        word-break: break-word;
+        line-height: 1.6;
+    }
+}
+
+.weight-text {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.small-text {
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: $color-white;
 }
