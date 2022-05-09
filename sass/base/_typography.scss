@@ -7,27 +7,35 @@ body {
     color: $color-black;
 }
 
-.spacing-text {
+.spacing-heading-text {
     color: $color-white;
+    font-size: 2.4rem;
+    font-weight: 700;
     letter-spacing: 3px;
-    line-height: 1;
+    line-height: 1.5;
 
     &--big {
-        font-size: 3rem;
-        font-weight: 600;
+        font-size: 3.6rem;
+        font-weight: 700;
         word-break: break-word;
-        line-height: 1.6;
+        line-height: 1.5;
     }
 }
 
-.weight-text {
-    font-size: 24px;
+.heading-text {
+    color: $color-white;
+    font-size: 2.4rem;
     font-weight: 700;
     line-height: 1.5;
 }
 
 .small-text {
+    letter-spacing: 3px;
     font-weight: 300;
     font-size: 1.2rem;
+    line-height: 1.5;
     color: $color-white;
 }
+
+
+// https://stackoverflow.com/questions/4445133/css-line-height-property-how-it-works-simple
