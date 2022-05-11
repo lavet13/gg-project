@@ -8,7 +8,7 @@
     <title>GG Promarket</title>
 </head>
 <body class="container">
-    <header class="header">
+    <header class="header mb-sm mt-sm">
         <div class="header__logo-box">
             <img src="img/GG.svg" class="header__logo header__logo--1">
             <img src="img/PROMARKET.svg" class="header__logo header__logo--2">
@@ -44,7 +44,7 @@
         </nav>
     </header>
 
-    <nav class="nav">
+    <nav class="nav mb-sm">
         <button class="btn btn--dark nav__button--1">
             <div class="btn__align">
                 <svg class="btn__icon">
@@ -162,48 +162,69 @@
 
     </div>
 
-    <section class="features">
+    <section class="section-features mt-bg mb-bg">
         <div class="feature">
-            <svg class="feature__icon">
+            <svg class="feature__icon--1">
                 <use xlink:href="img/car-icon.svg#car"></use>
             </svg>
 
-            <h2>Быстрая доставка по Москве и в любой регион России</h2>
+            <h2 class="feature__text">Быстрая доставка по Москве и в любой регион России</h2>
         </div>
 
         <div class="feature">
-            <svg class="feature__icon">
+            <svg class="feature__icon--2">
                 <use xlink:href="img/check-mark-icon.svg#mark"></use>
             </svg>
 
-            <h2>Быстрая доставка по Москве и в любой регион России</h2>
+            <h2 class="feature__text">Все товары имеют официальную гарантию производителя</h2>
         </div>
 
         <div class="feature">
-            <svg class="feature__icon">
+            <svg class="feature__icon--3">
                 <use xlink:href="img/carr.svg#carr"></use>
             </svg>
             
-            <h2>Быстрая доставка по Москве и в любой регион России</h2>
+            <h2 class="feature__text">Более 100 000 товаров</h2>
         </div>
 
         <div class="feature">
-            <svg class="feature__icon">
+            <svg class="feature__icon--4">
                 <use xlink:href="img/ruble-icon.svg#rub"></use>
             </svg>
 
-            <h2>Быстрая доставка по Москве и в любой регион России</h2>
+            <h2 class="feature__text">Любой способ оплаты</h2>
         </div>
 
         <div class="feature">
-            <svg class="feature__icon">
-                <use xlink:href="img/thumb-up-icon.svg#up"></use>
+            <svg class="feature__icon--5">
+                <use xlink:href="img/thumbs-up.svg#icon-thumbs-up"></use>
             </svg>
 
-            <h2>Быстрая доставка по Москве и в любой регион России</h2>
+            <h2 class="feature__text">Высокие оценки клиентов</h2>
         </div>
 
-        <!-- thumb up is need to fix -->
+    </section>
+
+    <section class="section-tiles mb-md">
+        <h1 class="heading-primary section-tiles__heading-primary">Коллекции плитки</h1>
+
+        <div class="tiles__grid">
+            <figure class="tiles__item tiles__item--1">
+                <img class="tiles__img" src="img/tile-1.png" alt="Tile 1">
+            </figure>
+            <figure class="tiles__item tiles__item--2">
+                <img src="img/tile-2.png" alt="Tile 2" class="tiles__img">
+            </figure>
+            <figure class="tiles__item tiles__item--3">
+                <img src="img/tile-3.png" alt="Tile 3" class="tiles__img">
+            </figure>
+            <figure class="tiles__item tiles__item--4">
+                <img src="img/tile-4.png" alt="Tile 4" class="tiles__img">
+            </figure>
+            <figure class="tiles__item tiles__item--5">
+                <img src="img/tile-5.png" alt="Tile 5" class="tiles__img">
+            </figure>
+        </div>
     </section>
 
     <script src="dist/bundle.js"></script>

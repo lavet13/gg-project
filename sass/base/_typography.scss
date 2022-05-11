@@ -37,5 +37,26 @@ body {
     color: $color-white;
 }
 
+.heading-primary {
+    position: relative;
+    display: inline-block;
+
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $color-blue-dark-1;
+
+        transform: translateY(5px);
+    }
+}
+
 
 // https://stackoverflow.com/questions/4445133/css-line-height-property-how-it-works-simple
