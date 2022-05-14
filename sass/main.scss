@@ -13,17 +13,20 @@
 @import "components/btn";
 @import "components/cta";
 @import "components/feature";
+@import "components/navigation";
+@import "components/products";
 @import "components/search";
 @import "components/tiles";
 @import "components/user-nav";
 
+@import "layout/goods";
 @import "layout/container";
 @import "layout/discount";
 @import "layout/features";
 @import "layout/header";
 @import "layout/nav";
 @import "layout/slider";
-@import "layout/tiles";
+@import "layout/section-tiles";
 
 @import "pages/home";
 
