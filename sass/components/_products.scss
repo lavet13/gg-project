@@ -5,13 +5,14 @@
 
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-        grid-column-gap: 1rem;
+        grid-gap: 1rem;
 
 
         &-card {
 
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(5, auto) 40px;
             grid-row-gap: 1rem;
         }
 
@@ -22,7 +23,7 @@
             display: block;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         &-hit {
@@ -40,6 +41,38 @@
             padding: 3px 1rem;
             text-transform: uppercase;
             transform: translate(10px, 10px);
+        }
+
+        &-discount {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            justify-self: start;
+            align-self: start;
+            
+            display: inline-block;
+            background-color: $color-red;
+            color: $color-white;
+            letter-spacing: 0.15em;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 3px 1rem;
+            text-transform: uppercase;
+            transform: translate(80%, 10px);
+        }
+
+        &-heart-icon {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            justify-self: end;
+
+            width: 33px;
+            height: 30px;
+
+            transform: scale(.65) translate(-10px, 5px);
+
+            &:hover {
+                fill: $color-blue-light-1;    
+            }
         }
 
         &-stars {
@@ -75,8 +108,68 @@
             font-size: 1.4rem;
             font-weight: 500;
             word-break: break-all;
+            width: 90%;
         }
 
-        // посмотреть в nexter-project
+        &-country {
+            margin-top: 3rem;
+            grid-column: 1 / -1;
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+
+        &-context {
+            grid-column: 1 / -1;
+
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            grid-column-gap: 1.5rem;
+            align-items: center;
+        }
+
+        &-cost {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+
+            &--discount {
+                font-size: 1.8rem;
+                font-weight: 700;
+                line-height: 0.15em;
+                text-decoration: line-through;
+                color: $color-red;
+            }
+        }
+
+        &-cart {
+            justify-self: center;
+
+            display: flex;
+            justify-content: center;
+            
+            border: 1px solid currentColor;
+            border-radius: 4px;
+            cursor: pointer;
+
+            font-size: 1.1rem;
+            font-family: inherit;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: $color-blue-light-1;
+            line-height: 3.5;
+
+            transition: all .2s;
+
+            width: 95%;
+
+            &:hover {
+                background-color: $color-blue-light-1;
+                color: $color-white;
+            }
+        }
     }
+
+    // переделать в нормальный вид, к примеру сделать отдельный лэйаут для всего этого, а отдельная стилизация в компоненты
 }
