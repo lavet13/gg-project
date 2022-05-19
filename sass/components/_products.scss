@@ -9,17 +9,23 @@
 
 
         &-card {
-
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(5, auto) 40px;
             grid-row-gap: 1rem;
         }
 
-        &-img {
+        &-link {
             grid-column: 1 / -1;
             grid-row: 1 / 2;
+        }
 
+        &-link:hover ~ &-heart-icon {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &-img {
             display: block;
             width: 100%;
             height: 100%;
@@ -61,6 +67,9 @@
         }
 
         &-heart-icon {
+            opacity: 0;
+            visibility: hidden;
+
             grid-column: 2 / 3;
             grid-row: 1 / 2;
             justify-self: end;
@@ -69,6 +78,8 @@
             height: 30px;
 
             transform: scale(.65) translate(-10px, 5px);
+
+            transition: all .2s;
 
             &:hover {
                 fill: $color-blue-light-1;    

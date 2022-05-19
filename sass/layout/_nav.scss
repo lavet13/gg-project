@@ -29,10 +29,6 @@
 
     &__button--3 {
         width: 100%;
-
-        @include respond(bp-small) {
-            width: auto;
-        }
     }
 
     &__search {
@@ -66,5 +62,69 @@
                 margin: 0;
             }
         }
+    }
+}
+
+
+
+
+.user-nav {
+    background-color: $color-background-2;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+
+    &__icon {
+        &--user {
+            width: 26px;
+            height: 29px;
+        }
+
+        &--heart {
+            width: 32px;
+            height: 29px;
+        }
+
+        &--market {
+            width: 35px;
+            height: 29px;
+        }
+    }
+
+    &__icon-box {
+        position: relative;
+        user-select: none;
+        -webkit-user-select: none;
+        cursor: pointer;
+
+        transition: all .2s;
+
+        &:active {
+            transform: translateY(2px);
+        }
+
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__notification-box {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        top: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__notification {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: $color-blue-dark-2;
+        font-weight: 600;
+        border-radius: 100px;
+        background-color: $color-yellow;
     }
 }

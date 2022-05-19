@@ -1,6 +1,8 @@
 // TINY SLIDER
 @import url("https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css");
 
+
+// STUCTURE OF THE PROJECT
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
@@ -12,21 +14,17 @@
 
 @import "components/btn";
 @import "components/cta";
+@import "components/discount";
 @import "components/feature";
 @import "components/navigation";
 @import "components/products";
 @import "components/search";
+@import "components/slider";
 @import "components/tiles";
-@import "components/user-nav";
 
-@import "layout/goods";
 @import "layout/container";
-@import "layout/discount";
-@import "layout/features";
 @import "layout/header";
 @import "layout/nav";
-@import "layout/slider";
-@import "layout/section-tiles";
 
 @import "pages/home";
 
