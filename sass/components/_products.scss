@@ -1,186 +1,236 @@
-.goods {
+.products {
+    grid-column: 1 / -1;
 
-    &__products {
-        grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 1rem;
 
+    &-card {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-        grid-gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, auto) 40px;
+        grid-row-gap: 1rem;
+    }
 
+    &-link {
+        position: relative;
 
-        &-card {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(5, auto) 40px;
-            grid-row-gap: 1rem;
-        }
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
 
-        &-link {
-            grid-column: 1 / -1;
-            grid-row: 1 / 2;
-        }
+    &-link:hover &-heart-icon,
+    &-link:hover &-overview {
+        opacity: 1;
+        visibility: visible;
+    }
 
-        &-link:hover ~ &-heart-icon {
-            visibility: visible;
-            opacity: 1;
-        }
+    &-link:hover ~ &-title {
+        color: $color-blue-light-1;
+    }
 
-        &-img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+    &-link:hover ~ &-context &-cart {
+        background-color: $color-blue-light-1;
+        color: $color-white;
+    }
 
-        &-hit {
-            grid-column: 1 / 2;
-            grid-row: 1 / 2;
-            justify-self: start;
-            align-self: start;
+    &-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 
-            display: inline-block;
-            background-color: $color-yellow;
-            color: $color-black;
-            letter-spacing: .15em;
-            font-size: 1rem;
-            font-weight: 500;
-            padding: 3px 1rem;
-            text-transform: uppercase;
-            transform: translate(10px, 10px);
-        }
+    &-hit {
+        position: absolute;
+        top: 0;
+        left: 0;
 
-        &-discount {
-            grid-column: 1 / 2;
-            grid-row: 1 / 2;
-            justify-self: start;
-            align-self: start;
-            
-            display: inline-block;
-            background-color: $color-red;
-            color: $color-white;
-            letter-spacing: 0.15em;
-            font-size: 1rem;
-            font-weight: 500;
-            padding: 3px 1rem;
-            text-transform: uppercase;
-            transform: translate(80%, 10px);
-        }
+        display: inline-block;
+        background-color: $color-yellow;
+        color: $color-black;
+        letter-spacing: .15em;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 3px 1rem;
+        text-transform: uppercase;
+        transform: translate(10px, 10px);
+    }
 
-        &-heart-icon {
-            opacity: 0;
-            visibility: hidden;
-
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-            justify-self: end;
-
-            width: 33px;
-            height: 30px;
-
-            transform: scale(.65) translate(-10px, 5px);
-
-            transition: all .2s;
-
-            &:hover {
-                fill: $color-blue-light-1;    
-            }
-        }
-
-        &-stars {
-            grid-column: 1 / -1;
-
-            display: flex;
-            align-items: center;
-        }
-
-        &-star {
-            width: 14px;
-            height: 13px;
-            &:not(:last-child) {
-                margin-right: 3px;
-            }
-        }
-
-        &-comments {
-            margin-left: 5px;
-            width: 13px;
-            height: 13px;
-
-            &-count {
-                margin-left: 3px;
-                font-size: 1.2rem;
-                font-weight: 500;
-            }
-        }
-
-        &-title {
-            grid-column: 1 / -1;
-
-            font-size: 1.4rem;
-            font-weight: 500;
-            word-break: break-all;
-            width: 90%;
-        }
-
-        &-country {
-            margin-top: 3rem;
-            grid-column: 1 / -1;
-            font-size: 1.4rem;
-            font-weight: 500;
-            line-height: 1.7;
-        }
-
-        &-context {
-            grid-column: 1 / -1;
-
-            display: grid;
-            grid-template-columns: max-content 1fr;
-            grid-column-gap: 1.5rem;
-            align-items: center;
-        }
-
-        &-cost {
-            font-size: 2.4rem;
-            font-weight: 700;
-            line-height: 1.2;
-
-            &--discount {
-                font-size: 1.8rem;
-                font-weight: 700;
-                line-height: 0.15em;
-                text-decoration: line-through;
-                color: $color-red;
-            }
-        }
-
-        &-cart {
-            justify-self: center;
-
-            display: flex;
-            justify-content: center;
-            
-            border: 1px solid currentColor;
-            border-radius: 4px;
-            cursor: pointer;
-
-            font-size: 1.1rem;
-            font-family: inherit;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: $color-blue-light-1;
-            line-height: 3.5;
-
-            transition: all .2s;
-
-            width: 95%;
-
-            &:hover {
-                background-color: $color-blue-light-1;
-                color: $color-white;
-            }
+    &-discount {
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        display: inline-block;
+        background-color: $color-red;
+        color: $color-white;
+        letter-spacing: 0.15em;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 3px 1rem;
+        text-transform: uppercase;
+        transform: translate(10px, 10px);
+        
+        &--ml {
+            transform: translate(80%, 10px) !important;
         }
     }
 
-    // переделать в нормальный вид, к примеру сделать отдельный лэйаут для всего этого, а отдельная стилизация в компоненты
+    &-overview {
+        opacity: 0;
+        visibility: hidden;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+
+        background-color: rgba($color-blue-light-1, .6);
+        border-radius: 4px;
+        color: $color-white;
+        font-size: 1.4rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-align: center;
+        word-break: keep-all;
+        letter-spacing: 0.15em;
+
+        padding: 1.2rem .5rem;
+
+        transition: all .2s;
+    }
+
+    &-heart-icon {
+        opacity: 0;
+        visibility: hidden;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 33px;
+        height: 30px;
+
+        transform: scale(.65) translate(-10px, 5px);
+
+        transition: all .2s;
+
+        &:hover {
+            fill: $color-blue-light-1;    
+        }
+    }
+
+    &-stars {
+        grid-column: 1 / -1;
+
+        display: flex;
+        align-items: center;
+    }
+
+    &-star {
+        width: 14px;
+        height: 13px;
+        &:not(:last-child) {
+            margin-right: 3px;
+        }
+    }
+
+    &-comments {
+        margin-left: 5px;
+        width: 13px;
+        height: 13px;
+
+        &-count {
+            margin-left: 3px;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+            color: $color-black;
+        }
+
+        &-link:hover &-count {
+            color: $color-blue-light-1;
+        }
+    }
+
+    &-title {
+        grid-column: 1 / -1;
+
+        font-size: 1.4rem;
+        font-weight: 500;
+        word-break: break-all;
+        width: 90%;
+
+        transition: all .2s;
+
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    &-country {
+        margin-top: 3rem;
+        grid-column: 1 / -1;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.7;
+    }
+
+    &-context {
+        grid-column: 1 / -1;
+
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-column-gap: 1.5rem;
+        align-items: center;
+    }
+
+    &-cost {
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1.2;
+
+        &--discount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 0.15em;
+            text-decoration: line-through;
+            color: $color-red;
+        }
+    }
+
+    &-cart {
+        justify-self: center;
+
+        display: flex;
+        justify-content: center;
+        
+        border: 1px solid currentColor;
+        border-radius: 4px;
+        cursor: pointer;
+
+        font-size: 1.1rem;
+        font-family: inherit;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: $color-blue-light-1;
+        line-height: 3.5;
+
+        transition: all .2s;
+
+        width: 95%;
+
+        &:hover {
+            background-color: $color-blue-light-1;
+            color: $color-white;
+        }
+    }
 }
