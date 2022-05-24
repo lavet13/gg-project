@@ -1,0 +1,15 @@
+.brands {
+    grid-column: 1 / -1;
+
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 10vw);
+    justify-items: center;
+    align-items: center;
+    grid-gap: 1.5rem;
+
+    &__img {
+        display: block;
+    }
+}

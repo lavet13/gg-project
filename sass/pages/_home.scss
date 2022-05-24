@@ -16,7 +16,7 @@
 
 .section-tiles {
     grid-column: center-start / center-end;
-    
+
     display: grid;
     grid-template-columns: max-content 1fr;
     grid-row-gap: 4rem;
@@ -35,7 +35,9 @@
         padding: 5rem 0 4rem 0;
 
         display: grid;
-        grid-template-columns: [full-start] minmax(5rem, 1fr) [center-start] repeat(8, [col-start] minmax(auto, 16rem) [col-end]) [center-end] minmax(5rem, 1fr) [full-end];
+        grid-template-columns:
+            [full-start] minmax(5rem, 1fr) [center-start] repeat(8,
+                [col-start] minmax(auto, 16rem) [col-end]) [center-end] minmax(5rem, 1fr) [full-end];
     }
 }
 
@@ -56,11 +58,9 @@
     font-weight: 500;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: .15em;
-    padding: 5rem 0;    
+    letter-spacing: 0.15em;
+    padding: 5rem 0;
 }
-
-
 
 // SLIDER
 
@@ -71,20 +71,20 @@
         position: relative;
         background-color: $color-blue-dark-2;
         color: $color-white;
-        
+
         display: grid;
         align-content: center;
     }
 
     &-controls {
         position: absolute;
-        top: 50%;
-        z-index: 15;
+
+        height: 100%;
+        width: 100%;
 
         display: flex;
         justify-content: space-between;
-        
-        width: 100%;
+        background-color: $color-blue-dark-2;
     }
 
     &-nav {
@@ -93,10 +93,10 @@
         bottom: 2rem;
         left: 0;
         z-index: 15;
-        
+
         display: flex;
         justify-content: center;
-        
+
         margin-right: 15%;
         margin-left: 15%;
 
@@ -113,11 +113,24 @@
         }
     }
 
-    &__arrow{
+    &__arrow {
+        display: block;
+        padding: 0 1rem;
         border: 0;
+
+        z-index: 15;
+
+        // background-color: red;
+        background-color: $color-blue-dark-2;
+
+        &-icon {
+            display: block;
+            width: 21px;
+            height: 36px;
+            background-color: $color-blue-dark-2;
+        }
     }
 }
-
 
 [data-action="start"] {
     display: none;

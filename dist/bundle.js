@@ -16,17 +16,21 @@ __webpack_require__.r(__webpack_exports__);
 
 function slider() {
   (0,_node_modules_tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__.tns)({
-    container: '.slider',
+    container: ".slider",
     items: 1,
-    slideBy: 'page',
+    slideBy: "page",
     autoplay: true
   });
   const prev = document.querySelector('[data-controls="prev"]'),
         next = document.querySelector('[data-controls="next"]');
-  prev.innerHTML = "&#8882;";
-  next.innerHTML = "&#8883;";
-  prev.classList.add('tns__arrow');
-  next.classList.add('tns__arrow'); // const cloneArrows = next.parentElement.cloneNode(true); // You call the cloneNode() method on the element you want to copy. If you want to also copy elements nested inside it, pass in true as an argument.
+  prev.innerHTML = `<svg class="tns__arrow-icon">
+                        <use xlink:href="img/slider-arrow-prev.svg#prev">
+                    </svg>`;
+  next.innerHTML = `<svg class="tns__arrow-icon">
+                      <use xlink:href="img/slider-arrow-next.svg#next">
+                    </svg>`;
+  prev.classList.add("tns__arrow");
+  next.classList.add("tns__arrow"); // const cloneArrows = next.parentElement.cloneNode(true); // You call the cloneNode() method on the element you want to copy. If you want to also copy elements nested inside it, pass in true as an argument.
   // next.parentElement.after(cloneArrows);
   // https://gomakethings.com/how-to-copy-or-clone-an-element-with-vanilla-js/#:~:text=You%20call%20the%20cloneNode(),of%20it%20var%20clone%20%3D%20elem.
   // prev.parentElement.insertAdjacentElement('beforebegin', prev);
