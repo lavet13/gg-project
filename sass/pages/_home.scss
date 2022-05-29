@@ -138,7 +138,11 @@
         z-index: 15;
 
         // background-color: red;
-        background-color: $color-blue-dark-2;
+        background-color: transparent;
+
+        @include respond(bp-small) {
+            padding: 0;
+        }
 
         &-icon {
             display: block;

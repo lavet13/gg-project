@@ -8,6 +8,7 @@
 
     @include respond(bp-large) {
         grid-template-columns: 2fr 1fr 1fr auto;
+        margin-bottom: 0 !important;
     }
 
     @include respond(bp-medium) {

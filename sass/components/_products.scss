@@ -25,11 +25,11 @@
         visibility: visible;
     }
 
-    &-link:hover ~ &-title {
+    &-link:hover~&-title {
         color: $color-blue-light-1;
     }
 
-    &-link:hover ~ &-context &-cart {
+    &-link:hover~&-context &-cart {
         background-color: $color-blue-light-1;
         color: $color-white;
     }
@@ -61,7 +61,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        
+
         display: inline-block;
         background-color: $color-red;
         color: $color-white;
@@ -71,7 +71,7 @@
         padding: 3px 1rem;
         text-transform: uppercase;
         transform: translate(10px, 10px);
-        
+
         &--ml {
             transform: translate(80%, 10px) !important;
         }
@@ -118,7 +118,7 @@
         transition: all .2s;
 
         &:hover {
-            fill: $color-blue-light-1;    
+            fill: $color-blue-light-1;
         }
     }
 
@@ -132,6 +132,7 @@
     &-star {
         width: 14px;
         height: 13px;
+
         &:not(:last-child) {
             margin-right: 3px;
         }
@@ -188,7 +189,7 @@
 
         display: grid;
         grid-template-columns: max-content 1fr;
-        grid-column-gap: 1.5rem;
+        grid-column-gap: 1rem;
         align-items: center;
     }
 
@@ -197,12 +198,20 @@
         font-weight: 700;
         line-height: 1.2;
 
+        @include respond(bp-large) {
+            font-size: 2rem;
+        }
+
         &--discount {
             font-size: 1.8rem;
             font-weight: 700;
             line-height: 0.15em;
             text-decoration: line-through;
             color: $color-red;
+
+            @include respond(bp-large) {
+                font-size: 1.4rem;
+            }
         }
     }
 
@@ -211,7 +220,7 @@
 
         display: flex;
         justify-content: center;
-        
+
         border: 1px solid currentColor;
         border-radius: 4px;
         cursor: pointer;
