@@ -5,6 +5,8 @@
     grid-template-columns: minmax(min-content, max-content) 5fr 11fr 15fr;
     grid-row-gap: 2rem;
 
+    margin: 1.5rem 0;
+
     @include respond(bp-large) {
         grid-template-columns: minmax(min-content, max-content) 1fr 1fr;
     }

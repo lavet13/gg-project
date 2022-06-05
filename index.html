@@ -8,11 +8,17 @@
     <title>GG Promarket</title>
 </head>
 <body class="container">
-    <!-- TODO make sense to get rid of this utilities and instead to add margins to layouts -->
-    <header class="header mb-sm mt-sm">
+    <header class="header">
         <div class="header__logo-box">
-            <img src="img/GG.svg" class="header__logo header__logo--1">
-            <img src="img/PROMARKET.svg" class="header__logo header__logo--2">
+            <!-- FIXME -->
+            <picture class="header__logo header__logo--1">
+                <source srcset="img/GG-small.png" media="(max-width: 37.5em)">
+                <img srcset="img/GG.svg" alt="Logo 1">
+            </picture>
+            <picture class="header__logo header__logo--2">
+                <source srcset="img/PROMARKET-small.png" media="(max-width: 37.5em)">
+                <img srcset="img/PROMARKET.svg" alt="Logo 2">
+            </picture>
         </div>
 
         <div class="header__location">
@@ -43,7 +49,7 @@
         </nav>
     </header>
 
-    <nav class="nav mb-sm">
+    <nav class="nav">
         <button class="btn btn--dark nav__button--1">
             <div class="btn__align">
                 <svg class="btn__icon">
@@ -161,7 +167,7 @@
 
     </div>
 
-    <section class="section-features mt-bg mb-bg">
+    <section class="section-features">
         <div class="feature">
             <svg class="feature__icon--1">
                 <use xlink:href="img/car-icon.svg#car"></use>
@@ -204,7 +210,7 @@
 
     </section>
 
-    <section class="section-tiles mb-md">
+    <section class="section-tiles">
         <h1 class="heading-primary">Коллекции плитки</h1>
 
         <div class="tiles__grid">
@@ -236,7 +242,7 @@
         </div>
     </section>
 
-    <section class="section-goods mb-md">
+    <section class="section-goods">
         <h1 class="heading-primary">Хиты продаж</h1>
 
         <nav class="navigation">
@@ -494,7 +500,7 @@
     </section>
 
     <div class="section-goods__background">
-        <section class="section-goods mb-md">
+        <section class="section-goods">
             <h1 class="heading-primary">Акции</h1>
 
             <nav class="navigation">
@@ -756,7 +762,7 @@
         </section>
     </div>
 
-    <div class="banner mt-md mb-md">
+    <div class="banner">
         еще один баннер
     </div>
 

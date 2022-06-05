@@ -6,6 +6,8 @@
     align-items: stretch;
     justify-items: start;
 
+    margin-bottom: 1.5rem;
+
     @include respond(bp-large) {
         grid-template-columns: 2fr 1fr 1fr auto;
         margin-bottom: 0 !important;

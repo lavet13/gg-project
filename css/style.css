@@ -8,10 +8,10 @@
 
 
 $breakpoint argument choices:
-- phone
-- tab-port
-- tab-land
-- big-desktop
+- phone (bp-small)
+- tab-port (bp-medium)
+- tab-land (bp-large)
+- big-desktop (bp-desktop)
 
 ORDER: Base + typography > general layout + grid > page layout > components
 
@@ -769,6 +769,11 @@ body {
     grid-template-rows: repeat(10, 20vw);
   }
 }
+@media only screen and (min-width: 112.5em) {
+  .tiles__grid {
+    grid-template-rows: repeat(2, 14vw);
+  }
+}
 .tiles__caption--1 {
   position: absolute;
   bottom: 4rem;
@@ -798,12 +803,19 @@ body {
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
   grid-template-rows: min-content min-content 55vh min-content;
 }
+@media only screen and (min-width: 112.5em) {
+  .container {
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    grid-template-rows: min-content min-content 50vh min-content;
+  }
+}
 
 .header {
   grid-column: center-start/center-end;
   display: grid;
   grid-template-columns: minmax(min-content, max-content) 5fr 11fr 15fr;
   grid-row-gap: 2rem;
+  margin: 1.5rem 0;
 }
 @media only screen and (max-width: 75em) {
   .header {
@@ -874,6 +886,7 @@ body {
   grid-template-columns: repeat(3, auto) 1fr auto;
   align-items: stretch;
   justify-items: start;
+  margin-bottom: 1.5rem;
 }
 @media only screen and (max-width: 75em) {
   .nav {
@@ -1004,9 +1017,10 @@ body {
 .section-features {
   grid-column: center-start/center-end;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-column-gap: 1.5rem;
   grid-row-gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  margin: 6rem 0;
 }
 
 .section-tiles {
@@ -1014,6 +1028,7 @@ body {
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-row-gap: 4rem;
+  margin-bottom: 3rem;
 }
 
 .section-goods {
@@ -1021,6 +1036,12 @@ body {
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-row-gap: 4rem;
+  margin-bottom: 3rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .section-goods {
+    margin-bottom: 0;
+  }
 }
 .section-goods__background {
   background-color: #eaf4ff;
@@ -1029,12 +1050,18 @@ body {
   display: grid;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
+@media only screen and (max-width: 56.25em) {
+  .section-goods__background {
+    padding: 3.5rem 0 2rem 0;
+  }
+}
 
 .section-brands {
   grid-column: center-start/center-end;
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-row-gap: 4rem;
+  margin-bottom: 3rem;
 }
 
 .banner {
@@ -1047,6 +1074,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   padding: 5rem 0;
+  margin: 3rem 0;
 }
 
 .tns-outer {

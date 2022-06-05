@@ -116,6 +116,10 @@
         @include respond(bp-small) {
             grid-template-rows: repeat(10, 20vw);
         }
+
+        @include respond(bp-desktop) {
+            grid-template-rows: repeat(2, 14vw);
+        }
     }
 
     &__caption--1 {
