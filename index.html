@@ -11,11 +11,11 @@
     <header class="header">
         <div class="header__logo-box">
             <!-- FIXME -->
-            <picture class="header__logo header__logo--1">
+            <picture class="header__logo">
                 <source srcset="img/GG-small.png" media="(max-width: 37.5em)">
                 <img srcset="img/GG.svg" alt="Logo 1">
             </picture>
-            <picture class="header__logo header__logo--2">
+            <picture class="header__logo">
                 <source srcset="img/PROMARKET-small.png" media="(max-width: 37.5em)">
                 <img srcset="img/PROMARKET.svg" alt="Logo 2">
             </picture>
@@ -169,17 +169,19 @@
 
     <section class="section-features">
         <div class="feature">
-            <svg class="feature__icon--1">
-                <use xlink:href="img/car-icon.svg#car"></use>
-            </svg>
+            <picture class="feature__icon--1">
+                <source srcset="img/car-icon-small.png" media="(max-width: 37.5em)">
+                <img srcset="img/car-icon.svg#car" alt="Feature 1">
+            </picture>
 
             <h2 class="feature__text">Быстрая доставка по Москве и в любой регион России</h2>
         </div>
 
         <div class="feature">
-            <svg class="feature__icon--2">
-                <use xlink:href="img/check-mark-icon.svg#mark"></use>
-            </svg>
+            <picture class="feature__icon--2">
+                <source srcset="img/check-mark-icon-small.png" media="(max-width: 37.5em)">
+                <img srcset="img/check-mark-icon.svg#mark" alt="Feature 2">
+            </picture>
 
             <h2 class="feature__text">Все товары имеют официальную гарантию производителя</h2>
         </div>
