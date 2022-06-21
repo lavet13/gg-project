@@ -132,6 +132,31 @@ body {
   margin-top: 6rem !important;
 }
 
+.articles {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+.articles > * {
+  display: grid;
+  grid-row-gap: 1.5rem;
+}
+.articles__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.articles__caption {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.5em;
+  color: #000;
+}
+
 .brands {
   grid-column: 1/-1;
   display: grid;
@@ -141,8 +166,15 @@ body {
   align-items: center;
   grid-gap: 1.5rem;
 }
+@media only screen and (max-width: 37.5em) {
+  .brands {
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    grid-row-gap: 3rem;
+  }
+}
 .brands__img {
   display: block;
+  object-fit: cover;
 }
 
 .btn, .btn:visited, .btn:link {
@@ -616,6 +648,28 @@ body {
   height: 23px;
 }
 
+.seo__heading-text {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.5em;
+}
+.seo__background {
+  background-color: #3bb9b8;
+  color: #fff;
+  font-size: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1fr min-content 1fr;
+}
+.seo__text {
+  grid-column: 4/10;
+  grid-row: 2/3;
+}
+.seo__img {
+  display: block;
+  width: 100%;
+}
+
 .slider__container {
   position: relative;
   display: grid;
@@ -1087,6 +1141,37 @@ body {
   letter-spacing: 0.15em;
   padding: 5rem 0;
   margin: 3rem 0;
+}
+
+.section-articles {
+  grid-column: center-start/center-end;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-row-gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.section-seo {
+  grid-column: center-start/center-end;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 4.5rem repeat(2, 1fr) 4.5rem;
+  margin: 3rem 0;
+}
+.section-seo--img {
+  grid-column: 1/5;
+  grid-row: 1/4;
+  z-index: 10;
+}
+.section-seo--heading-text {
+  justify-self: center;
+  align-self: end;
+  grid-column: 5/-1;
+  grid-row: 1/2;
+}
+.section-seo--background {
+  grid-column: 3/-1;
+  grid-row: 2/-1;
 }
 
 .tns-outer {

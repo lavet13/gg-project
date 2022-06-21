@@ -89,6 +89,44 @@
     margin: 3rem 0;
 }
 
+.section-articles {
+    grid-column: center-start / center-end;
+
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-row-gap: 4rem;
+
+    margin-bottom: 3rem;
+}
+
+.section-seo {
+    grid-column: center-start / center-end;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 4.5rem repeat(2, 1fr) 4.5rem;
+
+    margin: 3rem 0;
+
+    &--img {
+        grid-column: 1 / 5;
+        grid-row: 1 / 4;
+        z-index: 10;
+    }
+
+    &--heading-text {
+        justify-self: center;
+        align-self: end;
+        grid-column: 5 / -1;
+        grid-row: 1 / 2;
+    }
+
+    &--background {
+        grid-column: 3 / -1;
+        grid-row: 2 / -1;
+    }
+}
+
 // SLIDER
 
 .tns {

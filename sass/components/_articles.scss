@@ -1,0 +1,28 @@
+.articles {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 2rem;
+    justify-items: center;
+    align-items: start;
+
+    &>* {
+        display: grid;
+        grid-row-gap: 1.5rem;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &__caption {
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 1.5em;
+        color: $color-black;
+    }
+}
