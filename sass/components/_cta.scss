@@ -10,16 +10,18 @@
         @include respond(bp-medium) {
             justify-self: end;
         }
+
         display: grid;
         grid-template-columns: max-content max-content;
         align-items: center;
         font-size: 1.6rem;
-    }   
+    }
 
     &__btn {
         @include respond(bp-medium) {
             justify-self: start;
         }
+
         display: inline-block;
         width: 12rem;
     }

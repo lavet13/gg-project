@@ -11,26 +11,26 @@
         font-size: 1.6rem;
         display: block;
         background-color: $color-grey-light-1;
-        
+
         padding: 2rem 2.4rem;
         margin-right: -3.25rem;
         border: none;
-        width: 100%;
+        flex-basis: 100%;
 
         &:focus {
             outline: none;
             background-color: $color-grey-light-4;
         }
-        
+
         &::-webkit-input-placeholder {
             color: $color-grey-dark-4;
         }
     }
 
-    &__input:focus ~ &__button {
+    &__input:focus~&__button {
         background-color: $color-grey-light-4;
     }
-    
+
     &__button {
         cursor: pointer;
 

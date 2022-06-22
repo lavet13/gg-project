@@ -1,4 +1,5 @@
 .btn {
+
     &,
     &:visited,
     &:link {
@@ -13,7 +14,7 @@
         letter-spacing: 2px;
         text-transform: uppercase;
         text-decoration: none;
-        
+
         border: 0;
         padding: 2rem 2.5rem;
     }
@@ -37,7 +38,7 @@
         background-color: $color-yellow;
 
         transition: all .2s;
-        
+
         &:hover {
             background-color: lighten($color-yellow, 10%);
         }
@@ -70,12 +71,8 @@
         transform: translateY(-1px);
     }
 
-    &:focus {
-        outline: none;
-    }
-
     &--dashed {
-        border-bottom: 1px dashed #2B7BC6;;
+        border-bottom: 1px dashed #2B7BC6;
     }
 
 }
