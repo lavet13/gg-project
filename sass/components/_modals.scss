@@ -1,0 +1,34 @@
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-black, .4);
+    z-index: 9999999;
+
+    transition: .2s all;
+}
+
+.nav {
+    &__modal {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 99999999;
+
+        width: 100%;
+        min-height: 500px;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-white, .15);
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+
+        transition: .2s all;
+    }
+}

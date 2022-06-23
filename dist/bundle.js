@@ -3955,8 +3955,38 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ "./js/modules/slider.js");
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  const navButton = document.querySelector('.nav__button--1'),
+        modal = document.querySelector('.nav__modal'),
+        overlay = document.querySelector('.overlay');
+
+  const openModal = function (e) {
+    e.preventDefault();
+
+    if (modal.classList.contains('hidden')) {
+      document.body.style.overflow = 'hidden';
+      modal.classList.remove('hidden');
+      overlay.classList.remove('hidden');
+    }
+  };
+
+  const closeModal = function () {
+    if (!modal.classList.contains('hidden')) {
+      document.body.style.overflow = '';
+      modal.classList.add('hidden');
+      overlay.classList.add('hidden');
+    }
+  };
+
+  navButton.addEventListener('click', openModal);
+  overlay.addEventListener('click', closeModal); // ESCAPE
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
 });
 }();
 /******/ })()

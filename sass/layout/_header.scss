@@ -1,11 +1,14 @@
 .header {
     grid-column: center-start / center-end;
+    z-index: 99999999;
+    background-color: $color-white;
+    border-radius: 3px;
 
     display: grid;
     grid-template-columns: minmax(min-content, max-content) 5fr 11fr 15fr;
     grid-row-gap: 2rem;
 
-    margin: 1.5rem 0;
+    padding: 1.5rem 0;
 
     @include respond(bp-large) {
         grid-template-columns: minmax(min-content, max-content) 1fr 1fr;
