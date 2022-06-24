@@ -3958,6 +3958,7 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
   const navButton = document.querySelector('.nav__button--1'),
+        nav = document.querySelector('.nav'),
         modal = document.querySelector('.nav__modal'),
         overlay = document.querySelector('.overlay');
 
@@ -3968,6 +3969,12 @@ window.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = 'hidden';
       modal.classList.remove('hidden');
       overlay.classList.remove('hidden');
+      nav.classList.add('nav--active');
+      this.childNodes.forEach(item => {
+        if (item.nodeName === 'SPAN') {
+          item.classList.add('btn--active');
+        }
+      });
     }
   };
 
@@ -3976,6 +3983,12 @@ window.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = '';
       modal.classList.add('hidden');
       overlay.classList.add('hidden');
+      nav.classList.remove('nav--active');
+      navButton.childNodes.forEach(item => {
+        if (item.nodeName === 'SPAN') {
+          item.classList.remove('btn--active');
+        }
+      });
     }
   };
 

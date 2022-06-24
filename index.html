@@ -8,94 +8,131 @@
     <title>GG Promarket</title>
 </head>
 <body class="container">
-    <header class="header">
-        <div class="header__logo-box">
-            <picture class="header__logo">
-                <source srcset="img/GG-small.png" media="(max-width: 56.25em)">
-                <img srcset="img/GG.svg" alt="Logo 1" src="img/GG.svg">
-            </picture>
-            <picture class="header__logo">
-                <source srcset="img/PROMARKET-small.png" media="(max-width: 56.25em)">
-                <img srcset="img/PROMARKET.svg" alt="Logo 2" src="img/PROMARKET.svg">
-            </picture>
-        </div>
-
-        <div class="header__location">
-            <svg class="header__icon-location">
-                <use xlink:href="img/location.svg#location"></use>
-            </svg>
-            <a class="btn-inline btn-inline--dashed" href="#">Москва</a>
-        </div>
-
-        <div class="cta-box">
-            <div class="cta__phone">
-                8 495 018-32-10 
-
-                <svg class="cta__icon">
-                    <use xlink:href="img/dropdown.svg#dropdown"></use>
-                </svg>
+    <!-- FIXME add container to function -->
+    <div class="header__background">
+        <header class="header">
+            <div class="header__logo-box">
+                <picture class="header__logo">
+                    <source srcset="img/GG-small.png" media="(max-width: 56.25em)">
+                    <img srcset="img/GG.svg" alt="Logo 1" src="img/GG.svg">
+                </picture>
+                <picture class="header__logo">
+                    <source srcset="img/PROMARKET-small.png" media="(max-width: 56.25em)">
+                    <img srcset="img/PROMARKET.svg" alt="Logo 2" src="img/PROMARKET.svg">
+                </picture>
             </div>
 
-            <a class="btn-inline btn-inline--dashed cta__btn" href="#">Заказать звонок</a>
-        </div>
-
-        <nav class="header__nav">
-            <a class="btn-inline" href="#">Оплата</a>
-            <a class="btn-inline" href="#">Доставка</a>
-            <a class="btn-inline" href="#">Поставщикам</a>
-            <a class="btn-inline" href="#">Статьи</a>
-            <a class="btn-inline" href="#">Контакты</a>
-        </nav>
-    </header>
-
-    <nav class="nav">
-        <button class="btn btn--dark nav__button--1">
-            <div class="btn__align">
-                <svg class="btn__icon">
-                    <use xlink:href="img/burger.svg#burger"></use>
+            <div class="header__location">
+                <svg class="header__icon-location">
+                    <use xlink:href="img/location.svg#location"></use>
                 </svg>
-                Каталог товаров 
+                <a class="btn-inline btn-inline--dashed" href="#">Москва</a>
             </div>
-        </button>
-        <a class="btn btn--light nav__button--2" href="#">Акции</a>
-        <a class="btn btn--lighten nav__button--3" href="#">Бренды</a>
-        <form class="search nav__search" action="#">
-            <input class="search__input" type="text" placeholder="Что вы ищете?">
-            <button class="search__button">
-                <svg class="search__icon">
-                    <use xlink:href="img/search-icon.svg#search"></use>
-                </svg>
+
+            <div class="cta-box">
+                <div class="cta__phone">
+                    8 495 018-32-10 
+
+                    <svg class="cta__icon">
+                        <use xlink:href="img/dropdown.svg#dropdown"></use>
+                    </svg>
+                </div>
+
+                <a class="btn-inline btn-inline--dashed cta__btn" href="#">Заказать звонок</a>
+            </div>
+
+            <nav class="header__nav">
+                <a class="btn-inline" href="#">Оплата</a>
+                <a class="btn-inline" href="#">Доставка</a>
+                <a class="btn-inline" href="#">Поставщикам</a>
+                <a class="btn-inline" href="#">Статьи</a>
+                <a class="btn-inline" href="#">Контакты</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="nav__background">
+        <nav class="nav">
+            <button class="btn btn--dark nav__button--1">
+                <div class="btn__align">
+                    <svg class="btn__icon">
+                        <use xlink:href="img/burger.svg#burger"></use>
+                    </svg>
+                    Каталог товаров 
+                </div>
+                <span></span>
             </button>
-        </form>
-        
-        <nav class="user-nav nav__navigation">
-            <div class="user-nav__icon-box">
-                <svg class="user-nav__icon--user">
-                    <use xlink:href="img/user-icon.svg#user"></use>
-                </svg>
-            </div>
-            <div class="user-nav__icon-box">
-                <svg class="user-nav__icon--heart">
-                    <use xlink:href="img/fav-heart.svg#heart"></use>
-                </svg>
-                <span class="user-nav__notification-box">
-                    <span class="user-nav__notification">4</span>
-                </span>
-            </div>
-            <div class="user-nav__icon-box">
-                <svg class="user-nav__icon--market">
-                    <use xlink:href="img/market.svg#market"></use>
-                </svg>
-                <span class="user-nav__notification-box">
-                    <span class="user-nav__notification">2</span>
-                </span>
+            <a class="btn btn--light nav__button--2" href="#">Акции</a>
+            <a class="btn btn--lighten nav__button--3" href="#">Бренды</a>
+            <form class="search nav__search" action="#">
+                <input class="search__input" type="text" placeholder="Что вы ищете?">
+                <button class="search__button">
+                    <svg class="search__icon">
+                        <use xlink:href="img/search-icon.svg#search"></use>
+                    </svg>
+                </button>
+            </form>
+            
+            <nav class="user-nav nav__navigation">
+                <div class="user-nav__icon-box">
+                    <svg class="user-nav__icon--user">
+                        <use xlink:href="img/user-icon.svg#user"></use>
+                    </svg>
+                </div>
+                <div class="user-nav__icon-box">
+                    <svg class="user-nav__icon--heart">
+                        <use xlink:href="img/fav-heart.svg#heart"></use>
+                    </svg>
+                    <span class="user-nav__notification-box">
+                        <span class="user-nav__notification">4</span>
+                    </span>
+                </div>
+                <div class="user-nav__icon-box">
+                    <svg class="user-nav__icon--market">
+                        <use xlink:href="img/market.svg#market"></use>
+                    </svg>
+                    <span class="user-nav__notification-box">
+                        <span class="user-nav__notification">2</span>
+                    </span>
+                </div>
+            </nav>
+
+            <div class="nav__modal hidden">
+                <div class="modal">
+                    <div class="modal__tabs">
+                        <a class="modal__btn" href="#">
+                            <img src="img/modal/modal-icon-1.png" alt="Modal_icon 1" class="modal__img">
+                            <span>Плитка</span>
+                        </a>
+                        <a class="modal__btn" href="#">
+                            <img src="img/modal/modal-icon-2.png" alt="Modal_icon 2" class="modal__img">
+                            <span>Сантехника</span>
+                        </a>
+                        <a class="modal__btn" href="#">
+                            <img src="img/modal/modal-icon-3.png" alt="Modal_icon 3" class="modal__img">
+                            <span>Мебель для ванной</span>
+                        </a>
+                        <a class="modal__btn" href="#">
+                            <img src="img/modal/modal-icon-4.png" alt="Modal_icon 4" class="modal__img">
+                            <span>Электроника и бытовая техника</span>
+                        </a>
+                        <a class="modal__btn" href="#">
+                            <img src="img/modal/modal-icon-5.png" alt="Modal_icon 5" class="modal__img">
+                            <span>Отопление</span>
+                        </a>
+                        <a class="modal__btn" href="#">
+                            <img src="img/modal/modal-icon-6.png" alt="Modal_icon 6" class="modal__img">
+                            <span>Напольное покрытие</span>
+                        </a>
+                    </div>
+                    <div class="modal__info">
+
+                    </div>
+                    <div class="banner--2">Баннер</div>
+                </div>
             </div>
         </nav>
-
-        <div class="nav__modal hidden">
-
-        </div>
-    </nav>
+    </div>
 
     <ul class="slider">
 
@@ -770,7 +807,7 @@
         </section>
     </div>
 
-    <div class="banner">
+    <div class="banner--1">
         еще один баннер
     </div>
 

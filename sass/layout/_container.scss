@@ -1,11 +1,9 @@
 .container {
     display: grid;
-    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    @include container;
     grid-template-rows: min-content min-content 55vh min-content;
 
     @include respond(bp-desktop) {
-        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-
         grid-template-rows: min-content min-content 50vh min-content;
     }
 }

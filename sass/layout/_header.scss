@@ -1,8 +1,9 @@
 .header {
     grid-column: center-start / center-end;
     z-index: 99999999;
-    background-color: $color-white;
-    border-radius: 3px;
+    background-color: $color-background-3;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 
     display: grid;
     grid-template-columns: minmax(min-content, max-content) 5fr 11fr 15fr;
@@ -81,5 +82,15 @@
             justify-items: center;
             grid-template-columns: auto;
         }
+    }
+
+    &__background {
+        grid-column: 1 / -1;
+
+        display: grid;
+        @include container;
+        z-index: 99999999;
+
+        background-color: $color-background-3;
     }
 }

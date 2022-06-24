@@ -2,7 +2,7 @@
     position: relative;
     grid-column: center-start / center-end;
     z-index: 99999999;
-    background-color: $color-white;
+    background-color: $color-background-3;
 
     display: grid;
     grid-template-columns: repeat(3, auto) 1fr auto;
@@ -70,6 +70,16 @@
                 margin: 0;
             }
         }
+    }
+
+    &__background {
+        grid-column: 1 / -1;
+
+        display: grid;
+        @include container;
+        z-index: 99999999;
+
+        background-color: $color-background-3;
     }
 }
 

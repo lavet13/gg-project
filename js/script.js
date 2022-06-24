@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
   slider();
 
   const navButton = document.querySelector('.nav__button--1'),
+    nav = document.querySelector('.nav'),
     modal = document.querySelector('.nav__modal'),
     overlay = document.querySelector('.overlay');
 
@@ -15,6 +16,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
       modal.classList.remove('hidden');
       overlay.classList.remove('hidden');
+      nav.classList.add('nav--active');
+      this.childNodes.forEach(item => {
+        if (item.nodeName === 'SPAN') {
+          item.classList.add('btn--active');
+        }
+      });
     }
   };
 
@@ -24,6 +31,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
       modal.classList.add('hidden');
       overlay.classList.add('hidden');
+      nav.classList.remove('nav--active');
+      navButton.childNodes.forEach(item => {
+        if (item.nodeName === 'SPAN') {
+          item.classList.remove('btn--active');
+        }
+      });
     }
   };
 

@@ -18,7 +18,7 @@
 .nav {
     &__modal {
         position: absolute;
-        top: 100%;
+        top: calc(100% + 3px);
         left: 0;
         z-index: 99999999;
 
@@ -31,4 +31,55 @@
 
         transition: .2s all;
     }
+
+    &--active {
+        margin-bottom: 0 !important;
+    }
+}
+
+.modal {
+    display: flex;
+    flex-grow: 1;
+
+    &__tabs {
+        display: flex;
+        flex-direction: column;
+        background-color: $color-background-2;
+        padding: 3rem 2rem;
+    }
+
+    &__btn {
+
+        &:link,
+        &:visited {
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+            color: $color-black;
+            padding: .3rem .5rem;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        &:hover {
+            background-color: rgba($color-black, .2);
+        }
+
+        &:active {
+            background-color: rgba($color-black, .3);
+        }
+
+        &:focus {}
+
+    }
+
+    &__img {
+        display: block;
+        margin-right: 1rem;
+    }
+
+    &__info {}
 }
