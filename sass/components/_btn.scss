@@ -85,7 +85,26 @@
     }
 
     &--dashed {
-        border-bottom: 1px dashed #2B7BC6;
+        border-bottom: 1px dashed $color-blue-light-1;
     }
 
+    &--black {
+        color: $color-black;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1.875em;
+
+        transition: all .2s;
+
+        &:hover {
+            color: $color-blue-light-1;
+            border-bottom: 1px solid $color-blue-light-1;
+        }
+    }
+}
+
+.btn-inline-link {
+    &:hover {
+        border-bottom: 1px solid $color-blue-light-1;
+    }
 }

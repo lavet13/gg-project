@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
 
     if (modal.classList.contains('hidden')) {
-      document.body.style.overflow = 'hidden';
+      // document.body.style.overflow = 'hidden';
 
       modal.classList.remove('hidden');
       overlay.classList.remove('hidden');
@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const closeModal = function () {
     if (!modal.classList.contains('hidden')) {
-      document.body.style.overflow = '';
+      // document.body.style.overflow = '';
 
       modal.classList.add('hidden');
       overlay.classList.add('hidden');

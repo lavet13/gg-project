@@ -29,6 +29,8 @@
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
 
+        overflow: scroll;
+
         transition: .2s all;
     }
 
@@ -39,13 +41,13 @@
 
 .modal {
     display: flex;
-    flex-grow: 1;
 
     &__tabs {
+        flex: 0 0 20%;
         display: flex;
         flex-direction: column;
         background-color: $color-background-2;
-        padding: 3rem 2rem;
+        padding: 3rem 0 0;
     }
 
     &__btn {
@@ -57,11 +59,9 @@
 
             text-decoration: none;
             color: $color-black;
-            padding: .3rem .5rem;
+            padding: .5rem 2rem .5rem 2rem;
 
-            &:not(:last-child) {
-                margin-bottom: 1rem;
-            }
+            transition: all .2s;
         }
 
         &:hover {
@@ -72,8 +72,14 @@
             background-color: rgba($color-black, .3);
         }
 
-        &:focus {}
+        &:focus {
+            background-color: rgba($color-black, .3);
+        }
 
+
+        &--active {
+            background-color: $color-white;
+        }
     }
 
     &__img {
@@ -81,5 +87,24 @@
         margin-right: 1rem;
     }
 
-    &__info {}
+    &__info {
+        flex: 0 0 60%;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    &__category-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__other-categories {
+        display: grid;
+        grid-auto-flow: row;
+        grid-auto-rows: min-content;
+        grid-row-gap: 1rem;
+    }
 }

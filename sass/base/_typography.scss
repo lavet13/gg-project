@@ -62,5 +62,19 @@ body {
     }
 }
 
+.heading-secondary {
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.875em;
+}
+
+.text {
+    display: block;
+    color: $color-black;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.875em;
+}
+
 
 // https://stackoverflow.com/questions/4445133/css-line-height-property-how-it-works-simple

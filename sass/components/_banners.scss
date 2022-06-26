@@ -14,15 +14,20 @@
     }
 
     &--2 {
+        flex: 0 0 20%;
+        align-self: flex-start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 300px;
+        height: 380px;
+
         background-color: $color-yellow;
         color: $color-blue-dark-2;
         font-size: 1.4rem;
         font-weight: 500;
-        text-align: center;
         text-transform: uppercase;
         letter-spacing: 1.875em;
-
-        padding: 17.5rem 0;
-        margin: 0 11rem;
     }
 }
