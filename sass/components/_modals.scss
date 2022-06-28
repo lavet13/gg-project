@@ -4,12 +4,15 @@
 }
 
 .overlay {
-    position: absolute;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba($color-black, .4);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color-white, .4);
     z-index: 9999999;
 
     transition: .2s all;
@@ -23,13 +26,14 @@
         z-index: 99999999;
 
         width: 100%;
-        min-height: 500px;
         background-color: $color-white;
         box-shadow: 0 2rem 4rem rgba($color-white, .15);
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
 
-        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 70vh;
 
         transition: .2s all;
     }
@@ -40,6 +44,7 @@
 }
 
 .modal {
+    grid-column: 1 / -1;
     display: flex;
 
     &__tabs {
@@ -92,6 +97,7 @@
 
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        margin: 2rem 0;
     }
 
 
@@ -106,5 +112,6 @@
         grid-auto-flow: row;
         grid-auto-rows: min-content;
         grid-row-gap: 1rem;
+        justify-items: start;
     }
 }

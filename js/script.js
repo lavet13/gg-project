@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
 
     if (modal.classList.contains('hidden')) {
-      // document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
 
       modal.classList.remove('hidden');
       overlay.classList.remove('hidden');
@@ -23,11 +23,13 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
+    navButton.removeEventListener('click', openModal);
+    navButton.addEventListener('click', closeModal);
   };
 
   const closeModal = function () {
     if (!modal.classList.contains('hidden')) {
-      // document.body.style.overflow = '';
+      document.body.style.overflow = '';
 
       modal.classList.add('hidden');
       overlay.classList.add('hidden');
@@ -38,8 +40,11 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       });
     }
-  };
 
+    navButton.removeEventListener('click', closeModal);
+    navButton.addEventListener('click', openModal);
+  };
+  
   navButton.addEventListener('click', openModal);
   overlay.addEventListener('click', closeModal);
 

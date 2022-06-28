@@ -24,7 +24,7 @@
     grid-column-gap: 1.5rem;
     grid-row-gap: 3rem;
 
-    margin: 6rem 0;
+    padding: 6rem 0;
 }
 
 .section-tiles {
@@ -34,7 +34,7 @@
     grid-template-columns: max-content 1fr;
     grid-row-gap: 4rem;
 
-    margin-bottom: 3rem;
+    padding-bottom: 3rem;
 }
 
 .section-goods {
@@ -44,10 +44,10 @@
     grid-template-columns: max-content 1fr;
     grid-row-gap: 4rem;
 
-    margin-bottom: 3rem;
+    padding-bottom: 3rem;
 
     @include respond(bp-medium) {
-        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     &__background {
@@ -73,7 +73,7 @@
     grid-template-columns: max-content 1fr;
     grid-row-gap: 4rem;
 
-    margin-bottom: 3rem;
+    padding-bottom: 3rem;
 }
 
 .section-articles {
@@ -83,7 +83,7 @@
     grid-template-columns: max-content 1fr;
     grid-row-gap: 4rem;
 
-    margin-bottom: 3rem;
+    padding-bottom: 3rem;
 }
 
 .section-seo {
@@ -93,7 +93,7 @@
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 4.5rem repeat(2, 1fr) 4.5rem;
 
-    margin: 3rem 0;
+    padding: 3rem 0;
 
     &--img {
         grid-column: 1 / 5;
