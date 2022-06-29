@@ -35,7 +35,16 @@
         overflow-y: auto;
         max-height: 70vh;
 
+        display: grid;
+        grid-template-columns: 25% 1fr;
+        grid-column-gap: 2rem;
+
         transition: .2s all;
+
+        &--background {
+            grid-column: 1 / 2;
+            background-color: $color-background-2;
+        }
     }
 
     &--active {
@@ -44,15 +53,16 @@
 }
 
 .modal {
-    grid-column: 1 / -1;
+    grid-column: 2 / -1;
+
     display: flex;
+    padding: 3rem 0;
 
     &__tabs {
-        flex: 0 0 20%;
         display: flex;
         flex-direction: column;
-        background-color: $color-background-2;
-        padding: 3rem 0 0;
+
+        padding: 3rem 0;
     }
 
     &__btn {
@@ -93,11 +103,12 @@
     }
 
     &__info {
-        flex: 0 0 60%;
+        flex: 0 0 70%;
+        // margin-right: auto;
 
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        margin: 2rem 0;
+        grid-column-gap: 2rem;
     }
 
 
