@@ -7,12 +7,12 @@
 
     &__background {
         background-color: $color-green-blue;
+        border-radius: 3px;
         color: $color-white;
         font-size: 1.4rem;
 
         display: grid;
         grid-template-columns: repeat(10, 1fr);
-        grid-template-rows: 1fr min-content 1fr;
     }
 
     &__text {

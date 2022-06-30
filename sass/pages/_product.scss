@@ -1,0 +1,15 @@
+.product {
+    grid-column: center-start / center-end;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    justify-items: start;
+    grid-row-gap: 2rem;
+
+    padding: 2.5rem 3rem;
+
+    @include respond(bp-medium) {
+        grid-column: 1 / -1;
+    }
+}

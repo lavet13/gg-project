@@ -2,6 +2,70 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./js/modules/modal.js":
+/*!*****************************!*\
+  !*** ./js/modules/modal.js ***!
+  \*****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ modal; }
+/* harmony export */ });
+function modal() {
+  const navButton = document.querySelector('.nav__button--1'),
+        nav = document.querySelector('.nav'),
+        modal = document.querySelector('.nav__modal'),
+        overlay = document.querySelector('.overlay');
+
+  const openModal = function (e) {
+    e.preventDefault();
+
+    if (modal.classList.contains('hidden')) {
+      document.body.style.overflow = 'hidden';
+      modal.classList.remove('hidden');
+      overlay.classList.remove('hidden');
+      nav.classList.add('nav--active');
+      this.childNodes.forEach(item => {
+        if (item.nodeName === 'SPAN') {
+          item.classList.add('btn--active');
+        }
+      });
+    }
+
+    navButton.removeEventListener('click', openModal);
+    navButton.addEventListener('click', closeModal);
+  };
+
+  const closeModal = function () {
+    if (!modal.classList.contains('hidden')) {
+      document.body.style.overflow = '';
+      modal.classList.add('hidden');
+      overlay.classList.add('hidden');
+      nav.classList.remove('nav--active');
+      navButton.childNodes.forEach(item => {
+        if (item.nodeName === 'SPAN') {
+          item.classList.remove('btn--active');
+        }
+      });
+    }
+
+    navButton.removeEventListener('click', closeModal);
+    navButton.addEventListener('click', openModal);
+  };
+
+  navButton.addEventListener('click', openModal);
+  overlay.addEventListener('click', closeModal); // ESCAPE
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./js/modules/slider.js":
 /*!******************************!*\
   !*** ./js/modules/slider.js ***!
@@ -15,29 +79,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/tiny-slider/src/tiny-slider */ "./node_modules/tiny-slider/src/tiny-slider.js");
 
 function slider() {
-  (0,_node_modules_tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__.tns)({
-    container: ".slider",
-    items: 1,
-    slideBy: "page",
-    autoplay: true
-  });
-  const prev = document.querySelector('[data-controls="prev"]'),
-        next = document.querySelector('[data-controls="next"]');
-  prev.innerHTML = `<svg class="tns__arrow-icon">
+  try {
+    (0,_node_modules_tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__.tns)({
+      container: ".slider",
+      items: 1,
+      slideBy: "page",
+      autoplay: true
+    });
+    const prev = document.querySelector('[data-controls="prev"]'),
+          next = document.querySelector('[data-controls="next"]');
+    prev.innerHTML = `<svg class="tns__arrow-icon">
                         <use xlink:href="img/slider-arrow-prev.svg#prev">
                     </svg>`;
-  next.innerHTML = `<svg class="tns__arrow-icon">
+    next.innerHTML = `<svg class="tns__arrow-icon">
                       <use xlink:href="img/slider-arrow-next.svg#next">
                     </svg>`;
-  prev.classList.add("tns__arrow");
-  next.classList.add("tns__arrow"); // const cloneArrows = next.parentElement.cloneNode(true); // You call the cloneNode() method on the element you want to copy. If you want to also copy elements nested inside it, pass in true as an argument.
-  // next.parentElement.after(cloneArrows);
-  // https://gomakethings.com/how-to-copy-or-clone-an-element-with-vanilla-js/#:~:text=You%20call%20the%20cloneNode(),of%20it%20var%20clone%20%3D%20elem.
-  // prev.parentElement.insertAdjacentElement('beforebegin', prev);
-  // next.parentElement.insertAdjacentElement('beforebegin', next);
-  // previousElementSibling
-  // nextElementSibling
-}
+    prev.classList.add("tns__arrow");
+    next.classList.add("tns__arrow");
+  } catch (e) {}
+} // const cloneArrows = next.parentElement.cloneNode(true); // You call the cloneNode() method on the element you want to copy. If you want to also copy elements nested inside it, pass in true as an argument.
+// next.parentElement.after(cloneArrows);
+// https://gomakethings.com/how-to-copy-or-clone-an-element-with-vanilla-js/#:~:text=You%20call%20the%20cloneNode(),of%20it%20var%20clone%20%3D%20elem.
+// prev.parentElement.insertAdjacentElement('beforebegin', prev);
+// next.parentElement.insertAdjacentElement('beforebegin', next);
+// previousElementSibling
+// nextElementSibling
 
 /***/ }),
 
@@ -3954,58 +4020,12 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ "./js/modules/slider.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modal */ "./js/modules/modal.js");
+
 
 window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  const navButton = document.querySelector('.nav__button--1'),
-        nav = document.querySelector('.nav'),
-        modal = document.querySelector('.nav__modal'),
-        overlay = document.querySelector('.overlay');
-
-  const openModal = function (e) {
-    e.preventDefault();
-
-    if (modal.classList.contains('hidden')) {
-      document.body.style.overflow = 'hidden';
-      modal.classList.remove('hidden');
-      overlay.classList.remove('hidden');
-      nav.classList.add('nav--active');
-      this.childNodes.forEach(item => {
-        if (item.nodeName === 'SPAN') {
-          item.classList.add('btn--active');
-        }
-      });
-    }
-
-    navButton.removeEventListener('click', openModal);
-    navButton.addEventListener('click', closeModal);
-  };
-
-  const closeModal = function () {
-    if (!modal.classList.contains('hidden')) {
-      document.body.style.overflow = '';
-      modal.classList.add('hidden');
-      overlay.classList.add('hidden');
-      nav.classList.remove('nav--active');
-      navButton.childNodes.forEach(item => {
-        if (item.nodeName === 'SPAN') {
-          item.classList.remove('btn--active');
-        }
-      });
-    }
-
-    navButton.removeEventListener('click', closeModal);
-    navButton.addEventListener('click', openModal);
-  };
-
-  navButton.addEventListener('click', openModal);
-  overlay.addEventListener('click', closeModal); // ESCAPE
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      closeModal();
-    }
-  });
+  (0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
 }();
 /******/ })()

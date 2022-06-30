@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>GG Promarket</title>
+</head>
+<body class="container">
+    <div class="header__background">
+        <header class="header">
+            <div class="header__logo-box">
+                <picture class="header__logo">
+                    <source srcset="img/GG-small.png" media="(max-width: 56.25em)">
+                    <img srcset="img/GG.svg" alt="Logo 1" src="img/GG.svg">
+                </picture>
+                <picture class="header__logo">
+                    <source srcset="img/PROMARKET-small.png" media="(max-width: 56.25em)">
+                    <img srcset="img/PROMARKET.svg" alt="Logo 2" src="img/PROMARKET.svg">
+                </picture>
+            </div>
+
+            <div class="header__location">
+                <svg class="header__icon-location">
+                    <use xlink:href="img/location.svg#location"></use>
+                </svg>
+                <a class="btn-inline btn-inline--dashed" href="#">Москва</a>
+            </div>
+
+            <div class="cta-box">
+                <div class="cta__phone">
+                    8 495 018-32-10 
+
+                    <svg class="cta__icon">
+                        <use xlink:href="img/dropdown.svg#dropdown"></use>
+                    </svg>
+                </div>
+
+                <a class="btn-inline btn-inline--dashed cta__btn" href="#">Заказать звонок</a>
+            </div>
+
+            <nav class="header__nav">
+                <a class="btn-inline" href="#">Оплата</a>
+                <a class="btn-inline" href="#">Доставка</a>
+                <a class="btn-inline" href="#">Поставщикам</a>
+                <a class="btn-inline" href="#">Статьи</a>
+                <a class="btn-inline" href="#">Контакты</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="nav__background">
+        <nav class="nav">
+            <button class="btn btn--dark nav__button--1">
+                <div class="btn__align">
+                    <svg class="btn__icon">
+                        <use xlink:href="img/burger.svg#burger"></use>
+                    </svg>
+                    Каталог товаров 
+                </div>
+                <span></span>
+            </button>
+            <a class="btn btn--light nav__button--2" href="#">Акции</a>
+            <a class="btn btn--lighten nav__button--3" href="#">Бренды</a>
+            <form class="search nav__search" action="#">
+                <input class="search__input" type="text" placeholder="Что вы ищете?">
+                <button class="search__button">
+                    <svg class="search__icon">
+                        <use xlink:href="img/search-icon.svg#search"></use>
+                    </svg>
+                </button>
+            </form>
+            
+            <nav class="user-nav nav__navigation">
+                <div class="user-nav__icon-box">
+                    <svg class="user-nav__icon--user">
+                        <use xlink:href="img/user-icon.svg#user"></use>
+                    </svg>
+                </div>
+                <div class="user-nav__icon-box">
+                    <svg class="user-nav__icon--heart">
+                        <use xlink:href="img/fav-heart.svg#heart"></use>
+                    </svg>
+                    <span class="user-nav__notification-box">
+                        <span class="user-nav__notification">4</span>
+                    </span>
+                </div>
+                <div class="user-nav__icon-box">
+                    <svg class="user-nav__icon--market">
+                        <use xlink:href="img/market.svg#market"></use>
+                    </svg>
+                    <span class="user-nav__notification-box">
+                        <span class="user-nav__notification">2</span>
+                    </span>
+                </div>
+            </nav>
+
+            <div class="nav__modal hidden">
+                <div class="nav__modal--background">
+                    <div class="modal__tabs">
+                        <a class="modal__btn" href="#">
+                            <img src="img/modal/modal-icon-1.png" alt="Modal_icon 1" class="modal__img">
+                            <span class="text">Плитка</span>
+                        </a>
+                        <a class="modal__btn  modal__btn--active" href="#">
+                            <img src="img/modal/modal-icon-2.png" alt="Modal_icon 2" class="modal__img">
+                            <span class="text">Сантехника</span>
+                        </a>
+                        <a class="modal__btn" href="#">
+                            <img src="img/modal/modal-icon-3.png" alt="Modal_icon 3" class="modal__img">
+                            <span class="text">Мебель для ванной</span>
+                        </a>
+                        <a class="modal__btn" href="#">
+                            <img src="img/modal/modal-icon-4.png" alt="Modal_icon 4" class="modal__img">
+                            <span class="text">Электроника и бытовая техника</span>
+                        </a>
+                        <a class="modal__btn" href="#">
+                            <img src="img/modal/modal-icon-5.png" alt="Modal_icon 5" class="modal__img">
+                            <span class="text">Отопление</span>
+                        </a>
+                        <a class="modal__btn" href="#">
+                            <img src="img/modal/modal-icon-6.png" alt="Modal_icon 6" class="modal__img">
+                            <span class="text">Напольное покрытие</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="modal">  
+                    <div class="modal__info">
+                        <div class="modal__categories-info">
+                            <h2 class="heading-secondary">Сантехника</h2>
+                            <div class="modal__category-info">
+                                <span class="text">Ванны</span>
+                                <a class="btn-inline btn-inline-link" href="#">Ванны 150 см</a>
+                                <a class="btn-inline btn-inline-link" href="#">Ванны 160 см</a>
+                                <a class="btn-inline btn-inline-link" href="#">Ванны 170 см</a>
+                                <a class="btn-inline btn-inline-link" href="#">Еще</a>
+                            </div>
+                            <div class="modal__category-info">
+                                <span class="text">Унитазы</span>
+                                <a class="btn-inline btn-inline-link" href="#">2 режима смыва</a>
+                                <a class="btn-inline btn-inline-link" href="#">Без ободка</a>
+                                <a class="btn-inline btn-inline-link" href="#">Подвесные</a>
+                                <a class="btn-inline btn-inline-link" href="#">Еще</a>
+                            </div>
+                            <div class="modal__category-info">
+                                <span class="text">Раковины</span>
+                                <a class="btn-inline btn-inline-link" href="#">Шириной 40 см</a>
+                                <a class="btn-inline btn-inline-link" href="#">Шириной 50 см</a>
+                                <a class="btn-inline btn-inline-link" href="#">Шириной 60 см</a>
+                                <a class="btn-inline btn-inline-link" href="#">Еще</a>
+                            </div>
+                            <div class="modal__category-info">
+                                <span class="text">Смесители</span>
+                                <a class="btn-inline btn-inline-link" href="#">Кухонные мойки Ulgran</a>
+                                <a class="btn-inline btn-inline-link" href="#">Однорычажные для кухни</a>
+                                <a class="btn-inline btn-inline-link" href="#">Премиальные бренда Webert</a>
+                                <a class="btn-inline btn-inline-link" href="#">Еще</a>
+                            </div>
+                        </div>
+                        <div class="modal__other-categories">
+                            <a class="btn-inline btn-inline--black" href="#">Душевые кабины, уголки</a>
+                            <a class="btn-inline btn-inline--black" href="#">Биде</a>
+                            <a class="btn-inline btn-inline--black" href="#">Душевые боксы</a>
+                            <a class="btn-inline btn-inline--black" href="#">Душевые ограждения</a>
+                            <a class="btn-inline btn-inline--black" href="#">Душевые поддоны</a>
+                            <a class="btn-inline btn-inline--black" href="#">Душевые трапы и лотки</a>
+                            <a class="btn-inline btn-inline--black" href="#">Инсталляции</a>
+                            <a class="btn-inline btn-inline--black" href="#">Сливные трапы, желоба</a>
+                            <a class="btn-inline btn-inline--black" href="#">Душевые гарнитуры</a>
+                            <a class="btn-inline btn-inline--black" href="#">Душевые системы</a>
+                            <a class="btn-inline btn-inline--black" href="#">Душевые панели</a>
+                            <a class="btn-inline btn-inline--black" href="#">Верхние души</a>
+                            <a class="btn-inline btn-inline--black" href="#">Гигиенические души</a>
+                            <a class="btn-inline btn-inline--black" href="#">Аксессуары для ванной</a>
+                        </div>
+                        <div class="modal__other-categories">
+                            <a class="btn-inline btn-inline--black" href="#">Аксессуары для общественных санузлов</a>
+                            <a class="btn-inline btn-inline--black" href="#">Комплектующие</a>
+                            <a class="btn-inline btn-inline--black" href="#">Кухонные мойки</a>
+                            <a class="btn-inline btn-inline--black" href="#">Гидромассаж</a>
+                            <a class="btn-inline btn-inline--black" href="#">Трубы и фитинги</a>
+                            <a class="btn-inline btn-inline--black" href="#">Изделия для инвалидов</a>
+                            <a class="btn-inline btn-inline--black" href="#">Инструменты сантехнические</a>
+                            <a class="btn-inline btn-inline--black" href="#">Писсуары</a>
+                            <a class="btn-inline btn-inline--black" href="#">Фильтры</a>
+                        </div>
+                    </div>
+                    <div class="banner--2">Баннер</div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- TODO -->
+
+    <div class="product">
+        <ol class="breadcrumb-list">
+            <li class="breadcrumb-list__item"><a class="btn-inline btn-inline-link" href="#">Главная</a></li>
+            <li class="breadcrumb-list__item"><a class="btn-inline btn-inline-link" href="#">Сантехника</a></li>
+            <li class="breadcrumb-list__item"><a class="btn-inline btn-inline-link" href="#">Ванны</a></li>
+            <li class="breadcrumb-list__item"><a class="btn-inline btn-inline-link" href="#">Ванны 170 см</a></li>
+            <li class="breadcrumb-list__item"><span>Чугунная ванна Roca Newcast White 170x85 233650007 с антискользящим покрытием</span></li>
+        </ol>
+
+        <div class="product-card">
+            <!-- i'll implement slider later -->
+            <div class="product-images-slider">
+                <div class="product-images-slider__item">
+                    <img src="img/product-images/slider-1.png" alt="Product image 1">
+                </div>
+                <div class="product-images-slider__item">
+                    <img src="img/product-images/slider-2.png" alt="Product image 2">
+                </div>
+                <div class="product-images-slider__item">
+                    <img src="img/product-images/slider-3.png" alt="Product image 3">
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="product-card-tabs">
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__links">
+            <div>
+                <a class="btn-inline" href="#">Плитка</a>
+                <a class="btn-inline" href="#">Сантехника</a>
+                <a class="btn-inline" href="#">Мебель для ванной</a>
+                <a class="btn-inline" href="#">Электроника и бытовая техника</a>
+                <a class="btn-inline" href="#">Отопление</a>
+                <a class="btn-inline" href="#">Напольное покрытие</a>
+            </div>
+            <div>
+                <a class="btn-inline" href="#">Оплата</a>
+                <a class="btn-inline" href="#">Доставка</a>
+                <a class="btn-inline" href="#">Поставщикам</a>
+                <a class="btn-inline" href="#">Статьи</a>
+                <a class="btn-inline" href="#">Контакты</a>
+            </div>
+        </div>
+        <div class="footer__info">
+            <div>
+                <div class="footer__phone">8 495 018-32-10</div>
+                <button class="products-cart footer__btn">ЗАКАЗАТЬ ЗВОНОК</button>
+                <div>
+                    <p class="footer__text">Пн-Пт: 10:00 — 20:00</p>
+                    <p class="footer__text">Сб: 10:00 — 18:00</p>
+                    <p class="footer__text">Вс: выходной</p>
+                </div>
+            </div>
+            <div>
+                <p class="footer__text">Склад: <br>Москва, ул. Салтыковская, 6 стр 11<br><a class="btn-inline" href="mailto:zakaz@ggpromarket.ru">zakaz@ggpromarket.ru</a></p>
+            </div>
+        </div>
+
+        <div class="footer__links">
+            <div>
+                <div class="header__logo-box">
+                    <picture class="header__logo">
+                        <source srcset="img/GG-small.png" media="(max-width: 56.25em)">
+                        <img srcset="img/GG.svg" alt="Logo 1" src="img/GG.svg">
+                    </picture>
+                    <picture class="header__logo">
+                        <source srcset="img/PROMARKET-small.png" media="(max-width: 56.25em)">
+                        <img srcset="img/PROMARKET.svg" alt="Logo 2" src="img/PROMARKET.svg">
+                    </picture>
+                </div>
+                <span class="footer__text">&copy; 2022 ggpromarket.ru</span>
+            </div>
+
+            <div>
+
+            </div>
+        </div>
+
+        <div class="footer__info">
+            <div class="footer__socials">
+                <a class="footer__link" href="#">
+                    <img class="footer__icon footer__icon--1" src="img/footer/footer-icon-1.svg" alt="Footer 1">
+                </a>
+                <a class="footer__link" href="#">
+                    <img class="footer__icon footer__icon--2" src="img/footer/footer-icon-2.svg" alt="Footer 2">
+                </a>
+                <a class="footer__link" href="#">
+                    <img class="footer__icon footer__icon--3" src="img/footer/footer-icon-3.svg" alt="Footer 3">
+                </a>
+            </div>
+
+            <div class="footer__yandex">
+                <img class="footer__icon footer__icon--4" src="img/footer/yandex-icon.png" alt="Yandex 1">
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer__copyrights">
+        <p class="footer__copyrights-text">
+            Копирование всех составляющих частей сайта в какой бы то ни было форме без письменного разрешения владельцев авторских прав запрещено. Сайт носит исключительно информационный характер, 
+            и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437(2) Гражданского кодекса Российской Федерации. Наличие и цены уточняйте у наших операторов.
+        </p>
+        <p class="footer__copyrights-text">
+            Сайт использует технологию cookie. Используя сайт, Вы соглашаетесь с <span class="footer__copyrights-text--blue">правилами использования cookie</span>, а также даете <span class="footer__copyrights-text--blue">согласие на обработку персональных данных</span>
+        </p>
+    </div>
+    
+
+    <div class="overlay hidden"></div>
+
+    <!-- https://www.w3schools.com/howto/howto_js_media_queries.asp -->
+
+    <script src="dist/bundle.js"></script>
+</body>
+</html>

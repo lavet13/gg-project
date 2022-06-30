@@ -1,0 +1,28 @@
+.breadcrumb-list {
+    grid-column: 1 / -1;
+    position: relative;
+
+    display: flex;
+    align-items: baseline;
+    color: $color-blue-light-1;
+    font-size: 1.3rem;
+    margin-block-start: 0 !important;
+    list-style: none;
+    
+    &__item {
+        display: inline-block;
+
+        &:not(:first-child) {
+            &:before {
+                content: "> ";
+                padding: 0 .5rem;
+                color: $color-black;
+            }
+        }
+
+        &:last-child {
+            color: $color-black;
+        }
+    }
+    
+}
