@@ -8,6 +8,10 @@
 
     margin: 3rem 0;
 
+    @include respond(bp-medium) {
+        grid-column: full-start / full-end;
+    }
+
     &__links {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -157,6 +161,10 @@
 
             &--blue {
                 color: $color-blue-light-1;
+            }
+
+            @include respond(bp-medium) {
+                grid-column: full-start / full-end;
             }
         }
     }

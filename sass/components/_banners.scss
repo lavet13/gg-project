@@ -11,6 +11,10 @@
 
         padding: 5rem 0;
         margin: 3rem 0;
+
+        @include respond(bp-medium) {
+            grid-column: full-start / full-end;
+        }
     }
 
     &--2 {

@@ -16,10 +16,10 @@
     }
 
     @include respond(bp-medium) {
-        grid-column: 1 / -1;
+        grid-column: full-start / full-end;
 
-        grid-template-columns: minmax(min-content, max-content) 1fr;
-
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 3rem;
     }
 
     @include respond(bp-small) {
@@ -41,10 +41,11 @@
 
             @include respond(bp-medium) {
                 margin-left: 2rem;
+                justify-self: end;
             }
 
             @include respond(bp-small) {
-                justify-content: center;
+                justify-self: center;
             }
         }
     }
@@ -58,6 +59,14 @@
 
         display: flex;
         align-items: center;
+
+        @include respond(bp-medium) {
+            justify-self: start;
+        }
+
+        @include respond(bp-small) {
+            justify-self: center;
+        }
     }
 
     &__icon-location {

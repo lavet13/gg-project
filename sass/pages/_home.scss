@@ -12,7 +12,7 @@
     }
 
     @include respond(bp-medium) {
-        grid-column: 1 / -1;
+        grid-column: full-start / full-end;
     }
 }
 
@@ -25,6 +25,10 @@
     grid-row-gap: 3rem;
 
     padding: 6rem 0;
+
+    @include respond(bp-medium) {
+        grid-column: full-start / full-end;
+    }
 }
 
 .section-tiles {
@@ -35,6 +39,10 @@
     grid-row-gap: 4rem;
 
     padding-bottom: 3rem;
+
+    @include respond(bp-medium) {
+        grid-column: full-start / full-end;
+    }
 }
 
 .section-goods {
@@ -48,6 +56,8 @@
 
     @include respond(bp-medium) {
         padding-bottom: 0;
+
+        grid-column: full-start / full-end;
     }
 
     &__background {
@@ -74,6 +84,10 @@
     grid-row-gap: 4rem;
 
     padding-bottom: 3rem;
+
+    @include respond(bp-medium) {
+        grid-column: full-start / full-end;
+    }
 }
 
 .section-articles {
@@ -84,6 +98,10 @@
     grid-row-gap: 4rem;
 
     padding-bottom: 3rem;
+
+    @include respond(bp-medium) {
+        grid-column: full-start / full-end;
+    }
 }
 
 .section-seo {
@@ -112,6 +130,10 @@
         grid-column: 3 / -1;
         grid-row: 2 / -1;
     }
+
+    @include respond(bp-medium) {
+        grid-column: full-start / full-end;
+    }
 }
 
 // SLIDER
@@ -132,7 +154,7 @@
         }
 
         @include respond(bp-medium) {
-            grid-column: 1 / -1;
+            grid-column: full-start / full-end;
         }
     }
 

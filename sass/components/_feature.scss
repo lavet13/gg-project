@@ -5,39 +5,49 @@
     align-items: center;
 
     &__icon--1 {
-        width: 70px;
-        height: 50px;
-
-        @include respond(bp-small) {
-            width: 53px;
-            height: 38px;
+        & > * {
+            width: 70px;
+            height: 50px;
+    
+            @include respond(bp-small) {
+                width: 53px;
+                height: 38px;
+            }
         }
     }
 
     &__icon--2 {
-        width: 56px;
-        height: 66px;
+        & > * {
+            width: 56px;
+            height: 66px;
 
-        @include respond(bp-small) {
-            width: 42px;
-            height: 50px;
-        }
+            @include respond(bp-small) {
+                width: 42px;
+                height: 50px;
+            }
+        }        
     }
 
     &__icon--3 {
-        width: 65px;
-        height: 59px;
+        & > * {
+            width: 65px;
+            height: 59px;
+        }
     }
 
     &__icon--4 {
-        width: 64px;
-        height: 64px;
+        & > * {
+            width: 64px;
+            height: 64px;
+        }
     }
 
     &__icon--5 {
-        width: 6rem;
-        height: 6rem;
-        fill: $color-green-blue;
+        & > * {
+            width: 6rem;
+            height: 6rem;
+            fill: $color-green-blue;
+        }
     }
 
     &__text {

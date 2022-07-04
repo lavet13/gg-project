@@ -18,6 +18,11 @@
 
         border: 0;
         padding: 2rem 2.5rem;
+
+        @include respond(bp-small) {
+            padding: .8rem 1.2rem;
+            font-size: 1.1rem;
+        }
     }
 
     &--dark {
@@ -60,6 +65,10 @@
     &__icon {
         width: 24px;
         height: 18px;
+
+        @include respond(bp-small) {
+            transform: scale(0.7);
+        }
     }
 
     &__align {
@@ -68,6 +77,13 @@
         align-items: center;
         grid-template-columns: min-content auto;
         grid-column-gap: 2rem;
+
+        @include respond(bp-small) {
+            grid-column-gap: .5rem;
+            grid-template-columns: repeat(2, min-content);
+            width: 100%;
+            justify-content: center;
+        }
     }
 }
 

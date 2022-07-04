@@ -1,9 +1,4 @@
 .container {
     display: grid;
     @include container;
-    grid-template-rows: min-content min-content 55vh min-content;
-
-    @include respond(bp-desktop) {
-        grid-template-rows: min-content min-content 50vh min-content;
-    }
 }
