@@ -285,6 +285,12 @@ body {
 .btn--yellow:hover {
   background-color: #ffde33;
 }
+@media only screen and (max-width: 37.5em) {
+  .btn--yellow {
+    padding: 1.5rem 2rem;
+    font-size: 1.1rem;
+  }
+}
 .btn--active::after {
   content: "";
   position: absolute;
@@ -443,42 +449,60 @@ body {
 
 .feature {
   display: grid;
-  grid-template-columns: minmax(min-content, max-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
   grid-column-gap: 1rem;
   align-items: center;
 }
 .feature__icon--1 > * {
-  width: 70px;
-  height: 50px;
+  width: 7rem;
+  height: 5rem;
 }
 @media only screen and (max-width: 37.5em) {
   .feature__icon--1 > * {
-    width: 53px;
-    height: 38px;
+    width: 5.3rem;
+    height: 3.8rem;
   }
 }
 .feature__icon--2 > * {
-  width: 56px;
-  height: 66px;
+  width: 5.6rem;
+  height: 6.6rem;
 }
 @media only screen and (max-width: 37.5em) {
   .feature__icon--2 > * {
-    width: 42px;
-    height: 50px;
+    width: 4.2rem;
+    height: 5rem;
   }
 }
 .feature__icon--3 > * {
-  width: 65px;
-  height: 59px;
+  width: 6.5rem;
+  height: 5.9rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .feature__icon--3 > * {
+    width: 4.9rem;
+    height: 4.5rem;
+  }
 }
 .feature__icon--4 > * {
-  width: 64px;
-  height: 64px;
+  width: 6.4rem;
+  height: 6.4rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .feature__icon--4 > * {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
 }
 .feature__icon--5 > * {
   width: 6rem;
   height: 6rem;
   fill: #3bb9b8;
+}
+@media only screen and (max-width: 37.5em) {
+  .feature__icon--5 > * {
+    width: 3rem;
+    height: 2.9rem;
+  }
 }
 .feature__text {
   font-size: 1.4rem;
@@ -522,9 +546,20 @@ body {
   grid-column-gap: 2rem;
   transition: 0.2s all;
 }
+@media only screen and (max-width: 56.25em) {
+  .nav__modal {
+    grid-template-columns: auto;
+    grid-row-gap: 2rem;
+  }
+}
 .nav__modal--background {
   grid-column: 1/2;
   background-color: #f1f8ff;
+}
+@media only screen and (max-width: 56.25em) {
+  .nav__modal--background {
+    grid-column: 1/-1;
+  }
 }
 .nav--active {
   margin-bottom: 0 !important;
@@ -535,18 +570,59 @@ body {
   display: flex;
   padding: 3rem 0;
 }
+@media only screen and (max-width: 56.25em) {
+  .modal {
+    grid-column: 1/-1;
+  }
+}
 .modal__tabs {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   padding: 3rem 0;
+}
+@media only screen and (max-width: 56.25em) {
+  .modal__tabs {
+    flex-direction: row;
+  }
 }
 .modal__btn:link, .modal__btn:visited {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: #000;
-  padding: 0.5rem 2rem 0.5rem 2rem;
+  padding: 0.5rem 2rem;
   transition: all 0.2s;
+}
+@media only screen and (max-width: 56.25em) {
+  .modal__btn--1 {
+    flex: 0 1;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .modal__btn--2 {
+    flex: 0 1;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .modal__btn--3 {
+    flex: 0 1 23.2rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .modal__btn--4 {
+    flex: 0 1 33rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .modal__btn--5 {
+    flex: 0 1;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .modal__btn--6 {
+    flex: 0 0 25%;
+  }
 }
 .modal__btn:hover {
   background-color: rgba(0, 0, 0, 0.2);
@@ -918,6 +994,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: start;
+  padding: 5rem 0;
 }
 @media only screen and (max-width: 37.5em) {
   .slider__container {
@@ -1315,7 +1392,7 @@ body {
 .header__logo-box {
   cursor: pointer;
   display: grid;
-  grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
+  grid-template-columns: repeat(2, minmax(min-content, max-content));
   grid-column-gap: 5px;
   align-items: center;
   justify-items: start;
@@ -1569,7 +1646,7 @@ body {
 .section-features {
   grid-column: center-start/center-end;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
   grid-column-gap: 1.5rem;
   grid-row-gap: 3rem;
   padding: 6rem 0;
