@@ -7,23 +7,23 @@
     }
 
     &__phone {
-        @include respond(bp-medium) {
-            justify-self: end;
-        }
-
         display: grid;
         grid-template-columns: max-content max-content;
         align-items: center;
         font-size: 1.6rem;
+
+        @include respond(bp-small) {
+            justify-self: end;
+        }
     }
 
     &__btn {
-        @include respond(bp-medium) {
-            justify-self: start;
-        }
-
         display: inline-block;
         width: 12rem;
+
+        @include respond(bp-small) {
+            justify-self: start;
+        }
     }
 
     &-box {
@@ -35,12 +35,17 @@
         justify-content: center;
 
         @include respond(bp-large) {
-            justify-content: end;
+            grid-template-columns: repeat(auto-fit, minmax(18.5rem, 1fr));
+            justify-items: center;
         }
 
         @include respond(bp-medium) {
+            grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+            grid-column: 3 / span 1;
+        }
+
+        @include respond(bp-small) {
             grid-column: 1 / -1;
-            justify-content: center;
         }
     }
 }
