@@ -5,6 +5,10 @@
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-gap: 1rem;
 
+    @include respond(bp-medium) {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+
     &-card {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

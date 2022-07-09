@@ -78,25 +78,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/tiny-slider/src/tiny-slider */ "./node_modules/tiny-slider/src/tiny-slider.js");
 
-function slider() {
+function slider(_ref) {
+  let {
+    selector
+  } = _ref;
+
   try {
     (0,_node_modules_tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__.tns)({
-      container: ".slider",
+      container: selector,
       items: 1,
-      slideBy: "page",
+      slideBy: 'page',
       autoplay: true
     });
-    const prev = document.querySelector('[data-controls="prev"]'),
-          next = document.querySelector('[data-controls="next"]');
-    prev.innerHTML = `<svg class="tns__arrow-icon">
-                        <use xlink:href="img/slider-arrow-prev.svg#prev">
-                    </svg>`;
-    next.innerHTML = `<svg class="tns__arrow-icon">
-                      <use xlink:href="img/slider-arrow-next.svg#next">
-                    </svg>`;
-    prev.classList.add("tns__arrow");
-    next.classList.add("tns__arrow");
-  } catch (e) {}
+
+    for (let i = 0; i < 2; i++) {
+      const prev = document.querySelector(`#tns${i + 1}-ow [data-controls="prev"]`),
+            next = document.querySelector(`#tns${i + 1}-ow [data-controls="next"]`);
+      prev.innerHTML = `<svg class="tns__arrow-icon">
+                          <use xlink:href="img/slider-arrow-prev.svg#prev">
+                      </svg>`;
+      next.innerHTML = `<svg class="tns__arrow-icon">
+                        <use xlink:href="img/slider-arrow-next.svg#next">
+                      </svg>`;
+      prev.classList.add('tns__arrow');
+      next.classList.add('tns__arrow');
+    }
+  } catch (e) {
+    console.error(e.message);
+  }
 } // const cloneArrows = next.parentElement.cloneNode(true); // You call the cloneNode() method on the element you want to copy. If you want to also copy elements nested inside it, pass in true as an argument.
 // next.parentElement.after(cloneArrows);
 // https://gomakethings.com/how-to-copy-or-clone-an-element-with-vanilla-js/#:~:text=You%20call%20the%20cloneNode(),of%20it%20var%20clone%20%3D%20elem.
@@ -4024,7 +4033,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.addEventListener('DOMContentLoaded', () => {
-  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    selector: '.slider'
+  });
+  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    selector: '.other-slider'
+  });
   (0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
 }();

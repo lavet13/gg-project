@@ -136,29 +136,27 @@
     }
 }
 
-// SLIDER
+// SLIDER 1
 
-.tns {
-    &-outer {
-        grid-column: col-start 1 / col-end 5;
+#tns1-ow {
+    grid-column: col-start 1 / col-end 5;
 
-        position: relative;
-        background-color: $color-blue-dark-2;
-        color: $color-white;
+    position: relative;
+    background-color: $color-blue-dark-2;
+    color: $color-white;
 
-        display: grid;
-        align-content: center;
+    display: grid;
+    align-content: center;
 
-        @include respond(bp-large) {
-            grid-column: center-start / center-end;
-        }
-
-        @include respond(bp-medium) {
-            grid-column: full-start / full-end;
-        }
+    @include respond(bp-large) {
+        grid-column: center-start / center-end;
     }
 
-    &-controls {
+    @include respond(bp-medium) {
+        grid-column: full-start / full-end;
+    }
+
+    .tns-controls {
         position: absolute;
 
         height: 100%;
@@ -169,7 +167,7 @@
         background-color: $color-blue-dark-2;
     }
 
-    &-nav {
+    .tns-nav {
         position: absolute;
         right: 0;
         bottom: 2rem;
@@ -195,7 +193,7 @@
         }
     }
 
-    &__arrow {
+    .tns__arrow {
         display: block;
         padding: 0 1rem;
         border: 0;
@@ -216,7 +214,88 @@
             background-color: $color-blue-dark-2;
         }
     }
+
 }
+
+#tns2-ow {
+    grid-column: col-start 1 / col-end 5;
+
+    position: relative;
+    background-color: $color-blue-dark-2;
+    color: $color-white;
+
+    display: grid;
+    align-content: center;
+
+    @include respond(bp-large) {
+        grid-column: center-start / center-end;
+    }
+
+    @include respond(bp-medium) {
+        grid-column: full-start / full-end;
+    }
+
+    .tns-controls {
+        position: absolute;
+
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        background-color: $color-blue-dark-2;
+    }
+
+    .tns-nav {
+        position: absolute;
+        right: 0;
+        bottom: 2rem;
+        left: 0;
+        z-index: 15;
+
+        display: flex;
+        justify-content: center;
+
+        margin-right: 15%;
+        margin-left: 15%;
+
+        button {
+            display: inline-block;
+            border-radius: 100px;
+            border: 0;
+            width: 10px;
+            height: 10px;
+
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+        }
+    }
+
+    .tns__arrow {
+        display: block;
+        padding: 0 1rem;
+        border: 0;
+
+        z-index: 15;
+
+        // background-color: red;
+        background-color: transparent;
+
+        @include respond(bp-small) {
+            padding: 0;
+        }
+
+        &-icon {
+            display: block;
+            width: 21px;
+            height: 36px;
+            background-color: $color-blue-dark-2;
+        }
+    }
+
+}
+
 
 [data-action="start"] {
     display: none;
