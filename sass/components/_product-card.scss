@@ -86,11 +86,42 @@
         grid-row-gap: 1rem;
         justify-items: start;
         align-items: start;
+
+        &__btn {
+            letter-spacing: 0 !important;
+            color: $color-black;
+
+            span {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: $color-blue-light-1;
+            }
+        }
+
+        &__heart {
+                opacity: 1 !important;
+                visibility: visible !important;
+
+                position: relative !important;
+                top: 0;
+                left: 0;
+        }
     }
 
     &-info-cart {
        display: grid;
        grid-template-columns: min-content 1fr;
        grid-row-gap: 1rem;
+
+       &__cost {
+        
+       }
+
+       &__btn {
+
+       }
     }
+
+   
+
 }
