@@ -113,6 +113,11 @@ body {
   font-weight: 600;
 }
 
+.heading-tertiary {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
 .text {
   display: block;
   color: #000;
@@ -888,7 +893,7 @@ body {
   display: flex;
   align-items: center;
 }
-.product-characteristics-tabs__tab-item, .product-characteristics-tabs__tab-item:link, .product-characteristics-tabs__tab-item:visited {
+.product-characteristics-tabs__tab-link, .product-characteristics-tabs__tab-link:link, .product-characteristics-tabs__tab-link:visited {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -900,11 +905,45 @@ body {
   border-radius: 3px;
   transition: 0.2s all;
 }
-.product-characteristics-tabs__tab-item:not(:last-child) {
+.product-characteristics-tabs__tab-link:not(:last-child) {
   margin-right: 1rem;
 }
-.product-characteristics-tabs__tab-item:hover {
+.product-characteristics-tabs__tab-link:hover {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.product-suites {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 1.5rem;
+  align-items: start;
+  justify-items: start;
+}
+.product-suites .heading-secondary {
+  grid-column: 1/-1;
+}
+.product-suites .heading-tertiary {
+  grid-column: 1/-1;
+}
+
+.product-suite {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-column-gap: 1.5rem;
+  align-items: start;
+}
+.product-suite__item-img {
+  display: block;
+  width: 10rem;
+  max-width: 100%;
+  height: 10rem;
+  object-fit: cover;
+}
+.product-suite__item-content {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-row-gap: 1rem;
+  margin-right: 2rem;
 }
 
 .products {
@@ -2110,29 +2149,6 @@ body {
 }
 @media only screen and (max-width: 37.5em) {
   .product {
-    padding: 0.5rem 1rem;
-  }
-}
-
-.product-characteristics {
-  grid-column: center-start/center-end;
-  display: grid;
-  grid-row-gap: 2rem;
-  padding: 2.5rem 3rem;
-}
-@media only screen and (max-width: 75em) {
-  .product-characteristics {
-    padding: 2rem 2.5rem;
-  }
-}
-@media only screen and (max-width: 56.25em) {
-  .product-characteristics {
-    grid-column: full-start/full-end;
-    padding: 1rem 1.5rem;
-  }
-}
-@media only screen and (max-width: 37.5em) {
-  .product-characteristics {
     padding: 0.5rem 1rem;
   }
 }
