@@ -4040,6 +4040,21 @@ window.addEventListener('DOMContentLoaded', () => {
     selector: '.other-slider'
   });
   (0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  const suites = document.querySelector('.product-suites');
+  suites.addEventListener('click', function (e) {
+    console.log(e.target);
+
+    if (e.target.classList.contains('product-suite')) {
+      console.log('clicked');
+      const input = suites.querySelector('.product-suite__radio-input');
+
+      if (input.checked) {
+        input.checked = false;
+      } else {
+        input.checked = true;
+      }
+    }
+  });
 });
 }();
 /******/ })()
