@@ -1,42 +1,40 @@
 // TINY SLIDER
-@import url("https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css");
-
+@import url('https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css');
 
 // STUCTURE OF THE PROJECT
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
 
-@import "base/animations";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
 
-@import "components/articles";
-@import "components/banners";
-@import "components/brands";
-@import "components/breadcrumb";
-@import "components/btn";
-@import "components/cta";
-@import "components/discount";
-@import "components/feature";
-@import "components/modals";
-@import "components/navigation";
-@import "components/other-slider";
-@import "components/product-card";
-@import "components/product-characteristics-tabs";
-@import "components/product-collect";
-@import "components/product-suites";
-@import "components/products";
-@import "components/search";
-@import "components/seo";
-@import "components/slider";
-@import "components/tiles";
+@import 'components/articles';
+@import 'components/banners';
+@import 'components/brands';
+@import 'components/breadcrumb';
+@import 'components/btn';
+@import 'components/cta';
+@import 'components/discount';
+@import 'components/feature';
+@import 'components/modals';
+@import 'components/navigation';
+@import 'components/product-card';
+@import 'components/product-characteristics-tabs';
+@import 'components/product-collect';
+@import 'components/product-suites';
+@import 'components/products';
+@import 'components/search';
+@import 'components/seo';
+@import 'components/slider';
+@import 'components/tiles';
 
-@import "layout/container";
-@import "layout/footer";
-@import "layout/header";
-@import "layout/nav";
+@import 'layout/container';
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/nav';
 
-@import "pages/home";
-@import "pages/product";
+@import 'pages/home';
+@import 'pages/product';

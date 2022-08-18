@@ -25,9 +25,7 @@ export default function slider({ selector }) {
       prev.classList.add('tns__arrow');
       next.classList.add('tns__arrow');
     }
-  } catch (e) {
-    console.error(e.message);
-  }
+  } catch (e) {}
 }
 
 // const cloneArrows = next.parentElement.cloneNode(true); // You call the cloneNode() method on the element you want to copy. If you want to also copy elements nested inside it, pass in true as an argument.

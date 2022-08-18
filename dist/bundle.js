@@ -2,6 +2,51 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./js/modules/checkboxes.js":
+/*!**********************************!*\
+  !*** ./js/modules/checkboxes.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ checkboxes; }
+/* harmony export */ });
+function checkboxes() {
+  // https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation
+  try {
+    const suites = document.querySelector('.product-suites');
+    suites.addEventListener('click', function (e) {
+      console.log(e.currentTarget); // it's suites, also we can use "this" keyword, it would be the same scenario
+
+      let element = e.target; // however it needs to be in a separate variable
+
+      while (element) {
+        if (element.matches('.product-suite')) {
+          const input = element.querySelector('.product-suite__radio-input');
+
+          if (input.checked) {
+            input.checked = false;
+          } else {
+            input.checked = true;
+          }
+
+          element = null;
+        } else {
+          if (element === this) {
+            // we're reached the suites
+            element = null;
+          } else {
+            element = element.parentNode;
+          }
+        }
+      }
+    });
+  } catch (e) {}
+}
+
+/***/ }),
+
 /***/ "./js/modules/modal.js":
 /*!*****************************!*\
   !*** ./js/modules/modal.js ***!
@@ -66,6 +111,45 @@ function modal() {
 
 /***/ }),
 
+/***/ "./js/modules/mySlider.js":
+/*!********************************!*\
+  !*** ./js/modules/mySlider.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ mySlider; }
+/* harmony export */ });
+function mySlider(_ref) {
+  let {
+    container,
+    wrapper,
+    field,
+    slide,
+    next,
+    prev
+  } = _ref;
+
+  try {
+    const slides = document.querySelectorAll(slide),
+          slider = document.querySelector(container),
+          slideWrapper = document.querySelector(wrapper),
+          slideField = document.querySelector(field),
+          nextBtn = document.querySelector(next),
+          prevBtn = document.querySelector(prev);
+    const width = window.getComputedStyle(slideWrapper).width;
+    const offset = 0;
+    nextBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+    });
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+/***/ }),
+
 /***/ "./js/modules/slider.js":
 /*!******************************!*\
   !*** ./js/modules/slider.js ***!
@@ -103,9 +187,7 @@ function slider(_ref) {
       prev.classList.add('tns__arrow');
       next.classList.add('tns__arrow');
     }
-  } catch (e) {
-    console.error(e.message);
-  }
+  } catch (e) {}
 } // const cloneArrows = next.parentElement.cloneNode(true); // You call the cloneNode() method on the element you want to copy. If you want to also copy elements nested inside it, pass in true as an argument.
 // next.parentElement.after(cloneArrows);
 // https://gomakethings.com/how-to-copy-or-clone-an-element-with-vanilla-js/#:~:text=You%20call%20the%20cloneNode(),of%20it%20var%20clone%20%3D%20elem.
@@ -4029,45 +4111,27 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ "./js/modules/slider.js");
-/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modal */ "./js/modules/modal.js");
+/* harmony import */ var _modules_mySlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mySlider */ "./js/modules/mySlider.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ "./js/modules/modal.js");
+/* harmony import */ var _modules_checkboxes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/checkboxes */ "./js/modules/checkboxes.js");
+
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])({
     selector: '.slider'
   });
-  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    selector: '.other-slider'
+  (0,_modules_mySlider__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    container: '.articles',
+    wrapper: '.articles__wrapper',
+    field: '.articles__wrapper-inner',
+    slide: '.articles__slide',
+    next: '.articles__prev-btn',
+    prev: '.articles__next-btn'
   });
-  (0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])(); // https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation
-
-  const suites = document.querySelector('.product-suites');
-  suites.addEventListener('click', function (e) {
-    console.log(e.currentTarget); // suites, also we can use "this" keyword, it would be the same scenario
-
-    let element = e.target; // however it needs to be in a separate variable
-
-    while (element) {
-      if (element.matches('.product-suite')) {
-        const input = element.querySelector('.product-suite__radio-input');
-
-        if (input.checked) {
-          input.checked = false;
-        } else {
-          input.checked = true;
-        }
-
-        element = null;
-      } else {
-        if (element === this) {
-          // we're reached the suites
-          element = null;
-        } else {
-          element = element.parentNode;
-        }
-      }
-    }
-  });
+  (0,_modules_modal__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_modules_checkboxes__WEBPACK_IMPORTED_MODULE_3__["default"])();
 });
 }();
 /******/ })()
