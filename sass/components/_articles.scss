@@ -3,17 +3,6 @@
 
   grid-column: 1 / -1;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-gap: 2rem;
-  justify-items: center;
-  align-items: start;
-
-  & > * {
-    display: grid;
-    grid-row-gap: 1.5rem;
-  }
-
   &__img {
     display: block;
     width: 100%;
@@ -26,6 +15,8 @@
     font-weight: 700;
     line-height: 1.5em;
     color: $color-black;
+
+    padding: 1.5rem 2rem;
   }
 
   &__wrapper {
@@ -35,19 +26,23 @@
     overflow: hidden;
 
     &-inner {
-      display: flex;
+      display: grid;
+      grid-auto-flow: column dense;
+      grid-auto-columns: 30rem;
+
+      column-gap: 1.5rem;
+      transition: all .5s cubic-bezier(.21,1.12,.39,1.02);
     }
   }
 
   &__slide {
     figure {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      justify-items: center;
+      align-self: center;
       height: 100%;
-    }
 
-    &:not(:last-child) {
-      margin-right: 1.5rem;
+      background: $color-white;
     }
   }
 
@@ -59,17 +54,14 @@
 
     border: 0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     width: 6rem;
     height: 6rem;
     background: rgba($color-grey-light-10, 0.2);
 
     cursor: pointer;
 
-    transition: all 0.2s ease;
+    transition: opacity 0.2s;
+    z-index: 3;
 
     &:hover {
       filter: drop-shadow(0 0 0.25rem $color-grey-light-10);
@@ -113,6 +105,7 @@
     cursor: pointer;
 
     transition: all 0.2s ease;
+    z-index: 3;
 
     &:hover {
       filter: drop-shadow(0 0 0.25rem $color-grey-light-10);

@@ -138,10 +138,28 @@ function mySlider(_ref) {
           slideField = document.querySelector(field),
           nextBtn = document.querySelector(next),
           prevBtn = document.querySelector(prev);
-    const width = window.getComputedStyle(slideWrapper).width;
-    const offset = 0;
+    const wrapperWidth = parseInt(window.getComputedStyle(slideWrapper).width);
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    let offset = 0;
+
+    const computeWidth = function (width) {};
+
+    slideField.style.width = computeWidth(wrapperWidth);
+    console.log(`slideWrapper: ${wrapperWidth}`);
+    console.log(wrapperWidth * slides.length - 1);
     nextBtn.addEventListener('click', function (e) {
       e.preventDefault();
+      console.log('click');
+
+      if (offset > wrapperWidth * slides.length - 1) {
+        offset = 0;
+        slideField.style.transform = 'translate(0)';
+      } else {
+        offset += wrapperWidth;
+      }
+
+      console.log(offset);
+      slideField.style.transform = `translate(${-offset}px)`;
     });
   } catch (e) {
     console.log(e.message);
@@ -4121,14 +4139,15 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])({
     selector: '.slider'
-  });
+  }); // https://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number
+
   (0,_modules_mySlider__WEBPACK_IMPORTED_MODULE_1__["default"])({
     container: '.articles',
     wrapper: '.articles__wrapper',
     field: '.articles__wrapper-inner',
     slide: '.articles__slide',
-    next: '.articles__prev-btn',
-    prev: '.articles__next-btn'
+    next: '.articles__next-btn',
+    prev: '.articles__prev-btn'
   });
   (0,_modules_modal__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_modules_checkboxes__WEBPACK_IMPORTED_MODULE_3__["default"])();
