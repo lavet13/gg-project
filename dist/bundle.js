@@ -123,7 +123,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function mySlider(_ref) {
   let {
-    container,
     wrapper,
     field,
     slide,
@@ -133,25 +132,21 @@ function mySlider(_ref) {
 
   try {
     const slides = document.querySelectorAll(slide),
-          slider = document.querySelector(container),
           slideWrapper = document.querySelector(wrapper),
           slideField = document.querySelector(field),
           nextBtn = document.querySelector(next),
           prevBtn = document.querySelector(prev);
     const wrapperWidth = parseInt(window.getComputedStyle(slideWrapper).width);
-    const slideWidth = slides[0].getBoundingClientRect().width;
+    const slidesWidth = Math.round(slides[0].getBoundingClientRect().width);
+    const slideFieldWidth = wrapperWidth * slides.length;
+    const fieldWidth = slideFieldWidth / computeWidth(wrapperWidth, slidesWidth);
+    console.log(slidesWidth, wrapperWidth, fieldWidth);
     let offset = 0;
-
-    const computeWidth = function (width) {};
-
-    slideField.style.width = computeWidth(wrapperWidth);
-    console.log(`slideWrapper: ${wrapperWidth}`);
-    console.log(wrapperWidth * slides.length - 1);
     nextBtn.addEventListener('click', function (e) {
       e.preventDefault();
-      console.log('click');
+      console.log('nextBtn click');
 
-      if (offset > wrapperWidth * slides.length - 1) {
+      if (offset > fieldWidth - wrapperWidth) {
         offset = 0;
         slideField.style.transform = 'translate(0)';
       } else {
@@ -161,10 +156,34 @@ function mySlider(_ref) {
       console.log(offset);
       slideField.style.transform = `translate(${-offset}px)`;
     });
+    prevBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      console.log('prevBtn click');
+
+      if (offset < wrapperWidth) {
+        offset = 0;
+
+        while (offset < fieldWidth) {
+          offset += wrapperWidth;
+        }
+
+        offset -= wrapperWidth;
+        slideField.style.transform = `translate(${-offset}px)`;
+      } else {
+        offset -= wrapperWidth;
+      }
+
+      console.log(offset);
+      slideField.style.transform = `translate(${-offset}px)`;
+    });
   } catch (e) {
     console.log(e.message);
   }
 }
+
+const computeWidth = function (wrapperWidth, slidesWidth) {
+  return Math.round(wrapperWidth / slidesWidth);
+};
 
 /***/ }),
 
@@ -4142,7 +4161,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }); // https://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number
 
   (0,_modules_mySlider__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    container: '.articles',
     wrapper: '.articles__wrapper',
     field: '.articles__wrapper-inner',
     slide: '.articles__slide',

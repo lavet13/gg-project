@@ -10,7 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // https://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number
   mySlider({
-    container: '.articles',
     wrapper: '.articles__wrapper',
     field: '.articles__wrapper-inner',
     slide: '.articles__slide',
