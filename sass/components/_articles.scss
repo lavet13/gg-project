@@ -11,6 +11,8 @@
   }
 
   &__caption {
+    display: flex;
+    align-items: center;
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.5em;
@@ -22,22 +24,22 @@
   &__wrapper {
     display: block;
     width: 100%;
-    margin: 0 auto;
     overflow: hidden;
 
     &-inner {
       display: grid;
-      grid-auto-flow: column dense;
+      grid-auto-flow: column;
       grid-auto-columns: 30rem;
 
       column-gap: 1.5rem;
-      transition: all .5s cubic-bezier(.21,1.12,.39,1.02);
+      transition: all 0.5s cubic-bezier(0.21, 1.12, 0.39, 1.02);
     }
   }
 
   &__slide {
     figure {
       display: grid;
+      grid-template-rows: max-content minmax(3rem, 1fr);
       justify-items: center;
       align-self: center;
       height: 100%;

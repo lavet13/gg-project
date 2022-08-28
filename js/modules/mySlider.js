@@ -7,12 +7,21 @@ export default function mySlider({ wrapper, field, slide, next, prev }) {
       prevBtn = document.querySelector(prev);
 
     const wrapperWidth = parseInt(window.getComputedStyle(slideWrapper).width);
-    const slidesWidth = Math.round(slides[0].getBoundingClientRect().width);
-    const slideFieldWidth = wrapperWidth * slides.length;
-    const fieldWidth =
-      slideFieldWidth / computeWidth(wrapperWidth, slidesWidth);
 
-    console.log(slidesWidth, wrapperWidth, fieldWidth);
+    const lastStop = function (wrapperWidth, slides) {
+      console.log(
+        Math.round(wrapperWidth / slides[0].getBoundingClientRect().width)
+      ); // 3
+    };
+
+    slideWrapper.style.width =
+      (slides[0].getBoundingClientRect().width * lastStop(wrapperWidth, slides)) + ;
+
+    const slidesWidth = Math.round(slides[0].getBoundingClientRect().width);
+    const fieldWidth =
+      (wrapperWidth * slides.length) / computeWidth(wrapperWidth, slidesWidth);
+
+    console.log(slidesWidth, wrapperWidth, fieldWidth, slides.length);
 
     let offset = 0;
 
