@@ -1,4 +1,5 @@
 /******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./js/modules/checkboxes.js":
@@ -7,7 +8,6 @@
   \**********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ checkboxes; }
@@ -53,7 +53,6 @@ function checkboxes() {
   \*****************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ modal; }
@@ -116,9 +115,75 @@ function modal() {
 /*!********************************!*\
   !*** ./js/modules/mySlider.js ***!
   \********************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: E:\\______css\\projects\\gg-promarket\\js\\modules\\mySlider.js: Unexpected token (18:83)\n\n\u001b[0m \u001b[90m 16 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 17 |\u001b[39m     slideWrapper\u001b[33m.\u001b[39mstyle\u001b[33m.\u001b[39mwidth \u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 |\u001b[39m       (slides[\u001b[35m0\u001b[39m]\u001b[33m.\u001b[39mgetBoundingClientRect()\u001b[33m.\u001b[39mwidth \u001b[33m*\u001b[39m lastStop(wrapperWidth\u001b[33m,\u001b[39m slides)) \u001b[33m+\u001b[39m \u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 |\u001b[39m     \u001b[36mconst\u001b[39m slidesWidth \u001b[33m=\u001b[39m \u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mround(slides[\u001b[35m0\u001b[39m]\u001b[33m.\u001b[39mgetBoundingClientRect()\u001b[33m.\u001b[39mwidth)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 |\u001b[39m     \u001b[36mconst\u001b[39m fieldWidth \u001b[33m=\u001b[39m\u001b[0m\n    at instantiate (E:\\______css\\projects\\gg-promarket\\node_modules\\@babel\\parser\\lib\\index.js:72:32)\n    at constructor (E:\\______css\\projects\\gg-promarket\\node_modules\\@babel\\parser\\lib\\index.js:358:12)\n    at Parser.raise (E:\\______css\\projects\\gg-promarket\\node_modules\\@babel\\parser\\lib\\index.js:3335:19)\n    at Parser.unexpected (E:\\______css\\projects\\gg-promarket\\node_modules\\@babel\\parser\\lib\\index.js:3373:16)\n    at Parser.parseExprAtom (E:\\______css\\projects\\gg-promarket\\node_modules\\@babel\\parser\\lib\\index.js:13015:22)\n    at Parser.parseExprSubscripts (E:\\______css\\projects\\gg-promarket\\node_modules\\@babel\\parser\\lib\\index.js:12540:23)\n    at Parser.parseUpdate (E:\\______css\\projects\\gg-promarket\\node_modules\\@babel\\parser\\lib\\index.js:12519:21)\n    at Parser.parseMaybeUnary (E:\\______css\\projects\\gg-promarket\\node_modules\\@babel\\parser\\lib\\index.js:12490:23)\n    at Parser.parseMaybeUnaryOrPrivate (E:\\______css\\projects\\gg-promarket\\node_modules\\@babel\\parser\\lib\\index.js:12284:61)\n    at Parser.parseExprOpBaseRightExpr (E:\\______css\\projects\\gg-promarket\\node_modules\\@babel\\parser\\lib\\index.js:12406:34)");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ mySlider; }
+/* harmony export */ });
+function mySlider(_ref) {
+  let {
+    wrapper,
+    field,
+    slide,
+    next,
+    prev
+  } = _ref;
+
+  try {
+    const slides = document.querySelectorAll(slide),
+          slideWrapper = document.querySelector(wrapper),
+          slideField = document.querySelector(field),
+          nextBtn = document.querySelector(next),
+          prevBtn = document.querySelector(prev);
+    const wrapperWidth = parseInt(window.getComputedStyle(slideWrapper).width);
+    const slidesWidth = Math.round(slides[0].getBoundingClientRect().width);
+    const slideFieldWidth = wrapperWidth * slides.length;
+    const fieldWidth = slideFieldWidth / computeWidth(wrapperWidth, slidesWidth);
+    console.log(slidesWidth, wrapperWidth, fieldWidth);
+    let offset = 0;
+    nextBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      console.log('nextBtn click');
+
+      if (offset > fieldWidth - wrapperWidth) {
+        offset = 0;
+        slideField.style.transform = 'translate(0)';
+      } else {
+        offset += wrapperWidth;
+      }
+
+      console.log(offset);
+      slideField.style.transform = `translate(${-offset}px)`;
+    });
+    prevBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      console.log('prevBtn click');
+
+      if (offset < wrapperWidth) {
+        offset = 0;
+
+        while (offset < fieldWidth) {
+          offset += wrapperWidth;
+        }
+
+        offset -= wrapperWidth;
+        slideField.style.transform = `translate(${-offset}px)`;
+      } else {
+        offset -= wrapperWidth;
+      }
+
+      console.log(offset);
+      slideField.style.transform = `translate(${-offset}px)`;
+    });
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+const computeWidth = function (wrapperWidth, slidesWidth) {
+  return Math.round(wrapperWidth / slidesWidth);
+};
 
 /***/ }),
 
@@ -128,7 +193,6 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
   \******************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ slider; }
@@ -177,7 +241,6 @@ function slider(_ref) {
   \************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addCSSRule": function() { return /* binding */ addCSSRule; }
@@ -201,7 +264,6 @@ function addCSSRule(sheet, selector, rules, index) {
   \**********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addClass": function() { return /* binding */ addClass; }
@@ -226,7 +288,6 @@ var addClass = _hasClass_js__WEBPACK_IMPORTED_MODULE_0__.classListSupport ?
   \***********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addEvents": function() { return /* binding */ addEvents; }
@@ -249,7 +310,6 @@ function addEvents(el, obj, preventScrolling) {
   \*******************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "arrayFromNodeList": function() { return /* binding */ arrayFromNodeList; }
@@ -270,7 +330,6 @@ function arrayFromNodeList (nl) {
   \*****************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "caf": function() { return /* binding */ caf; }
@@ -290,7 +349,6 @@ var caf = win.cancelAnimationFrame
   \******************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "calc": function() { return /* binding */ calc; }
@@ -340,7 +398,6 @@ function calc() {
   \*******************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "checkStorageValue": function() { return /* binding */ checkStorageValue; }
@@ -357,7 +414,6 @@ function checkStorageValue (value) {
   \******************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "classListSupport": function() { return /* binding */ classListSupport; }
@@ -372,7 +428,6 @@ var classListSupport = 'classList' in document.createElement('_');
   \******************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "createStyleSheet": function() { return /* binding */ createStyleSheet; }
@@ -408,7 +463,6 @@ function createStyleSheet (media, nonce) {
   \************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "docElement": function() { return /* binding */ docElement; }
@@ -423,7 +477,6 @@ var docElement = document.documentElement;
   \********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Events": function() { return /* binding */ Events; }
@@ -464,7 +517,6 @@ function Events() {
   \********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "extend": function() { return /* binding */ extend; }
@@ -499,7 +551,6 @@ function extend() {
   \*********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "forEach": function() { return /* binding */ forEach; }
@@ -519,7 +570,6 @@ function forEach (arr, callback, scope) {
   \*********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getAttr": function() { return /* binding */ getAttr; }
@@ -536,7 +586,6 @@ function getAttr(el, attr) {
   \*********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getBody": function() { return /* binding */ getBody; }
@@ -561,7 +610,6 @@ function getBody () {
   \*******************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getCssRulesLength": function() { return /* binding */ getCssRulesLength; }
@@ -579,7 +627,6 @@ function getCssRulesLength(sheet) {
   \****************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getEndProperty": function() { return /* binding */ getEndProperty; }
@@ -608,7 +655,6 @@ function getEndProperty(propIn, propOut) {
   \************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getSlideId": function() { return /* binding */ getSlideId; }
@@ -628,7 +674,6 @@ function getSlideId() {
   \*******************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getTouchDirection": function() { return /* binding */ getTouchDirection; }
@@ -654,7 +699,6 @@ function getTouchDirection(angle, range) {
   \*****************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "has3DTransforms": function() { return /* binding */ has3DTransforms; }
@@ -699,7 +743,6 @@ function has3DTransforms(tf){
   \*********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "hasAttr": function() { return /* binding */ hasAttr; }
@@ -716,7 +759,6 @@ function hasAttr(el, attr) {
   \**********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "classListSupport": function() { return /* reexport safe */ _classListSupport_js__WEBPACK_IMPORTED_MODULE_0__.classListSupport; },
@@ -739,7 +781,6 @@ var hasClass = _classListSupport_js__WEBPACK_IMPORTED_MODULE_0__.classListSuppor
   \*************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "hideElement": function() { return /* binding */ hideElement; }
@@ -756,7 +797,6 @@ function hideElement(el, forceHide) {
   \************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "isNodeList": function() { return /* binding */ isNodeList; }
@@ -774,7 +814,6 @@ function isNodeList(el) {
   \***********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "isVisible": function() { return /* binding */ isVisible; }
@@ -791,7 +830,6 @@ function isVisible(el) {
   \*************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "jsTransform": function() { return /* binding */ jsTransform; }
@@ -825,7 +863,6 @@ function jsTransform(element, attr, prefix, postfix, to, duration, callback) {
   \*******************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "mediaquerySupport": function() { return /* binding */ mediaquerySupport; }
@@ -878,7 +915,6 @@ function mediaquerySupport () {
   \***************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "passiveOption": function() { return /* binding */ passiveOption; }
@@ -903,7 +939,6 @@ var passiveOption = supportsPassive ? { passive: true } : false;
   \******************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "percentageLayout": function() { return /* binding */ percentageLayout; }
@@ -955,7 +990,6 @@ function percentageLayout() {
   \*****************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "raf": function() { return /* binding */ raf; }
@@ -977,7 +1011,6 @@ var raf = win.requestAnimationFrame
   \*************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "removeAttrs": function() { return /* binding */ removeAttrs; }
@@ -1005,7 +1038,6 @@ function removeAttrs(els, attrs) {
   \***************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "removeCSSRule": function() { return /* binding */ removeCSSRule; }
@@ -1029,7 +1061,6 @@ function removeCSSRule(sheet, index) {
   \*************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "removeClass": function() { return /* binding */ removeClass; }
@@ -1054,7 +1085,6 @@ var removeClass = _hasClass_js__WEBPACK_IMPORTED_MODULE_0__.classListSupport ?
   \**************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "removeEvents": function() { return /* binding */ removeEvents; }
@@ -1077,7 +1107,6 @@ function removeEvents(el, obj) {
   \***************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "resetFakeBody": function() { return /* binding */ resetFakeBody; }
@@ -1103,7 +1132,6 @@ function resetFakeBody (body, docOverflow) {
   \**********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "setAttrs": function() { return /* binding */ setAttrs; }
@@ -1130,7 +1158,6 @@ function setAttrs(els, attrs) {
   \*************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "setFakeBody": function() { return /* binding */ setFakeBody; }
@@ -1160,7 +1187,6 @@ function setFakeBody (body) {
   \*****************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "setLocalStorage": function() { return /* binding */ setLocalStorage; }
@@ -1180,7 +1206,6 @@ function setLocalStorage(storage, key, value, access) {
   \*************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "showElement": function() { return /* binding */ showElement; }
@@ -1197,7 +1222,6 @@ function showElement(el, forceHide) {
   \**********************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "toDegree": function() { return /* binding */ toDegree; }
@@ -1214,7 +1238,6 @@ function toDegree (y, x) {
   \***************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "whichProperty": function() { return /* binding */ whichProperty; }
@@ -1253,7 +1276,6 @@ function whichProperty(props){
   \*****************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "tns": function() { return /* binding */ tns; }
@@ -4089,18 +4111,6 @@ var tns = function(options) {
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
-/******/ 				function() { return module; };
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -4131,16 +4141,14 @@ var tns = function(options) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-"use strict";
 /*!**********************!*\
   !*** ./js/script.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ "./js/modules/slider.js");
 /* harmony import */ var _modules_mySlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mySlider */ "./js/modules/mySlider.js");
-/* harmony import */ var _modules_mySlider__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_mySlider__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ "./js/modules/modal.js");
 /* harmony import */ var _modules_checkboxes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/checkboxes */ "./js/modules/checkboxes.js");
 
@@ -4152,7 +4160,7 @@ window.addEventListener('DOMContentLoaded', () => {
     selector: '.slider'
   }); // https://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number
 
-  _modules_mySlider__WEBPACK_IMPORTED_MODULE_1___default()({
+  (0,_modules_mySlider__WEBPACK_IMPORTED_MODULE_1__["default"])({
     wrapper: '.articles__wrapper',
     field: '.articles__wrapper-inner',
     slide: '.articles__slide',
