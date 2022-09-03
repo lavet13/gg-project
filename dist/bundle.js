@@ -4089,6 +4089,18 @@ var tns = function(options) {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	!function() {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = function(module) {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module; };
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -4128,6 +4140,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ "./js/modules/slider.js");
 /* harmony import */ var _modules_mySlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mySlider */ "./js/modules/mySlider.js");
+/* harmony import */ var _modules_mySlider__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_mySlider__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ "./js/modules/modal.js");
 /* harmony import */ var _modules_checkboxes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/checkboxes */ "./js/modules/checkboxes.js");
 
@@ -4139,7 +4152,7 @@ window.addEventListener('DOMContentLoaded', () => {
     selector: '.slider'
   }); // https://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number
 
-  (0,_modules_mySlider__WEBPACK_IMPORTED_MODULE_1__["default"])({
+  _modules_mySlider__WEBPACK_IMPORTED_MODULE_1___default()({
     wrapper: '.articles__wrapper',
     field: '.articles__wrapper-inner',
     slide: '.articles__slide',
