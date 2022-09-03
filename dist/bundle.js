@@ -141,6 +141,7 @@ function mySlider(_ref) {
     const slideFieldWidth = wrapperWidth * slides.length;
     const fieldWidth = slideFieldWidth / computeWidth(wrapperWidth, slidesWidth);
     console.log(slidesWidth, wrapperWidth, fieldWidth);
+    slideField.style.maxWidth = `100%`;
     let offset = 0;
     nextBtn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -151,10 +152,10 @@ function mySlider(_ref) {
         slideField.style.transform = 'translate(0)';
       } else {
         offset += wrapperWidth;
+        slideField.style.transform = `translate(${-offset}px)`;
       }
 
       console.log(offset);
-      slideField.style.transform = `translate(${-offset}px)`;
     });
     prevBtn.addEventListener('click', function (e) {
       e.preventDefault();

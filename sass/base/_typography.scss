@@ -5,7 +5,7 @@ body {
     font-weight: 400;
     line-height: 1.6;
     color: $color-black;
-    background: #eee;
+    background: #fff;
 }
 
 .spacing-heading-text {
@@ -51,7 +51,7 @@ body {
     line-height: 1.2;
 
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: 0;
         left: 0;
@@ -82,8 +82,8 @@ body {
 }
 
 .product__text {
-  font-size: 1.2rem;
-  font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
 // https://stackoverflow.com/questions/4445133/css-line-height-property-how-it-works-simple
